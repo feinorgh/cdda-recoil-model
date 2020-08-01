@@ -13,8 +13,7 @@ Suggestions, criticism, and expert advice is welcome.
 For recoil, there is a "proof-of-concept" Python script, with simplified
 models of firearms, ammunition, and shooters.
 
-See https://github.com/feinorgh/cdda-recoil-model/blob/master/recoil.py
-for details.
+See [recoil.py](recoil.py) for details, and implmentation comments.
 
 There is an [example](EXAMPLE.md) output, showing the output from the
 very experimental model.
