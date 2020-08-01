@@ -48,15 +48,15 @@
 
 - [M24: 7.62x51mm NATO MK319 MOD 0 (24"barrel, 5 rd. mag)](#m24-762x51mm-nato-mk319-mod-0-24barrel-5-rd-mag)
 
-- [H&K G3: 7.62x51mm NATO M80 (17.7"barrel, 20 rd. mag)](#h&k-g3-762x51mm-nato-m80-177barrel-20-rd-mag)
+- [H&K G3: 7.62x51mm NATO M80 (17.7"barrel, 20 rd. mag)](#hk-g3-762x51mm-nato-m80-177barrel-20-rd-mag)
 
-- [H&K G3: 7.62x51mm NATO M80A1 (17.7"barrel, 20 rd. mag)](#h&k-g3-762x51mm-nato-m80a1-177barrel-20-rd-mag)
+- [H&K G3: 7.62x51mm NATO M80A1 (17.7"barrel, 20 rd. mag)](#hk-g3-762x51mm-nato-m80a1-177barrel-20-rd-mag)
 
-- [H&K G3: 7.62x51mm NATO MK319 MOD 0 (17.7"barrel, 20 rd. mag)](#h&k-g3-762x51mm-nato-mk319-mod-0-177barrel-20-rd-mag)
+- [H&K G3: 7.62x51mm NATO MK319 MOD 0 (17.7"barrel, 20 rd. mag)](#hk-g3-762x51mm-nato-mk319-mod-0-177barrel-20-rd-mag)
 
-### [.40 S&W](#40-s&w)
+### [.40 S&W](#40-sw)
 
-- [Glock 22: .40 S&W 165 gr Federal FMJ (4.49"barrel, 15 rd. mag)](#glock-22-40-s&w-165-gr-federal-fmj-449barrel-15-rd-mag)
+- [Glock 22: .40 S&W 165 gr Federal FMJ (4.49"barrel, 15 rd. mag)](#glock-22-40-sw-165-gr-federal-fmj-449barrel-15-rd-mag)
 
 ### [7x57mm](#7x57mm)
 
