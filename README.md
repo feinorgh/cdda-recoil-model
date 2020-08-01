@@ -1,4 +1,4 @@
-# A Proposal for an Alternative Firearm Model for CDDA
+# A Proposal for an Alternative Firearm Simulation Model for CDDA
 
 This is meant to be notes around ideas of physics based alternative models
 for recoil, noise, damage, automatic fire handling, and
