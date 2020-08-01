@@ -347,7 +347,7 @@ def calculate_throwoff(shooter, gun, recoil_full, recoil_empty):
         print("|------:|------:|-------:|------:|-------:|------:|-------:|")
 
         for skill in range(11):
-            skill_factor = skill * 0.1  # 10 represents full handling
+            skill_factor = skill * 0.1  # 10 represents full handling ability
             handling_factor = 1 + (s_shooter * skill_factor * stance_factor)
             # reaction time = 0.15 s for touch, we use this as a base
             # scaling factor to compensate for recoil management
@@ -398,7 +398,6 @@ if __name__ == "__main__":
             for ammo in AMMO[guntype]:
                 title = f"{weapon['name']}: {ammo['name']} ({weapon['barrel_length']}\"" \
                        f"barrel, {weapon['capacity']} rd. mag)"
-                #link = title.replace(" ", "-").replace(":", "").lower()
                 link = substitutions.sub("", title).lower().replace(" ", "-")
                 print(f"- [{title}](#{link})\n")
 
