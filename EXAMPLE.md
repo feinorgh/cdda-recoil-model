@@ -6,19 +6,19 @@
 
 - [Beretta M9A1: 9x19mm 115 gr Federal FMJ (4.9"barrel, 15 rd. mag)](#beretta-m9a1-9x19mm-115-gr-federal-fmj-49barrel-15-rd-mag)
 
-- [Beretta M9A1: 9x19mm 124 gr Underwood FMJ +P (4.9"barrel, 15 rd. mag)](#beretta-m9a1-9x19mm-124-gr-underwood-fmj-+p-49barrel-15-rd-mag)
+- [Beretta M9A1: 9x19mm 124 gr Underwood FMJ +P (4.9"barrel, 15 rd. mag)](#beretta-m9a1-9x19mm-124-gr-underwood-fmj-p-49barrel-15-rd-mag)
 
 - [Glock 19M: 9x19mm 115 gr Federal FMJ (4.02"barrel, 15 rd. mag)](#glock-19m-9x19mm-115-gr-federal-fmj-402barrel-15-rd-mag)
 
-- [Glock 19M: 9x19mm 124 gr Underwood FMJ +P (4.02"barrel, 15 rd. mag)](#glock-19m-9x19mm-124-gr-underwood-fmj-+p-402barrel-15-rd-mag)
+- [Glock 19M: 9x19mm 124 gr Underwood FMJ +P (4.02"barrel, 15 rd. mag)](#glock-19m-9x19mm-124-gr-underwood-fmj-p-402barrel-15-rd-mag)
 
 - [Glock 17: 9x19mm 115 gr Federal FMJ (4.49"barrel, 17 rd. mag)](#glock-17-9x19mm-115-gr-federal-fmj-449barrel-17-rd-mag)
 
-- [Glock 17: 9x19mm 124 gr Underwood FMJ +P (4.49"barrel, 17 rd. mag)](#glock-17-9x19mm-124-gr-underwood-fmj-+p-449barrel-17-rd-mag)
+- [Glock 17: 9x19mm 124 gr Underwood FMJ +P (4.49"barrel, 17 rd. mag)](#glock-17-9x19mm-124-gr-underwood-fmj-p-449barrel-17-rd-mag)
 
 - [MP5-N: 9x19mm 115 gr Federal FMJ (8.9"barrel, 30 rd. mag)](#mp5-n-9x19mm-115-gr-federal-fmj-89barrel-30-rd-mag)
 
-- [MP5-N: 9x19mm 124 gr Underwood FMJ +P (8.9"barrel, 30 rd. mag)](#mp5-n-9x19mm-124-gr-underwood-fmj-+p-89barrel-30-rd-mag)
+- [MP5-N: 9x19mm 124 gr Underwood FMJ +P (8.9"barrel, 30 rd. mag)](#mp5-n-9x19mm-124-gr-underwood-fmj-p-89barrel-30-rd-mag)
 
 ### [5.56x45mm NATO](#556x45mm-nato)
 

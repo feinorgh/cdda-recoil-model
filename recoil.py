@@ -390,7 +390,7 @@ def show_recoil(gun, used_ammo):
 if __name__ == "__main__":
     print("# Example Data for Recoil Model\n")
     print("## Table of Contents\n")
-    substitutions = re.compile(r"[\",.():&]")
+    substitutions = re.compile(r"[\",.():&+]")
     for guntype in WEAPONS:
         reference = substitutions.sub("", guntype).lower().replace(" ", "-")
         print(f"### [{guntype}](#{reference})\n")
