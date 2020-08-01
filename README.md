@@ -113,6 +113,10 @@ For firearms:
 * Magazine mass (this, to a large extent is already present in the JSON data)
 * Type of mechanism (see https://en.wikipedia.org/wiki/Action_(firearms))
 
+There is an empirical model for adjusting muzzle velocity depending on barrel length and
+cartridge power, which I've abstracted into a function with corresponding graph here:
+https://docs.google.com/spreadsheets/d/10TeuTTjwusbWB9SaH-nq03bMWDyILylU9Btvtu3uTDM/edit#gid=1882141270
+
 For gun mods:
 
 * Its effect on the mass of the firearm
