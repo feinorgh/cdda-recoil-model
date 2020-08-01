@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [9x19mm Parabellum](#9x19mm-parabellum)
+### [9x19mm Parabellum](#9x19mm-parabellum)
 
 - [Beretta M9A1: 9x19mm 115 gr Federal FMJ (4.9"barrel, 15 rd. mag)](#beretta-m9a1-9x19mm-115-gr-federal-fmj-49barrel-15-rd-mag)
 
@@ -20,7 +20,7 @@
 
 - [MP5-N: 9x19mm 124 gr Underwood FMJ +P (8.9"barrel, 30 rd. mag)](#mp5-n-9x19mm-124-gr-underwood-fmj-+p-89barrel-30-rd-mag)
 
-* [5.56x45mm NATO](#556x45mm-nato)
+### [5.56x45mm NATO](#556x45mm-nato)
 
 - [M4A1: 5.56x45mm NATO M855A1 (14.5"barrel, 30 rd. mag)](#m4a1-556x45mm-nato-m855a1-145barrel-30-rd-mag)
 
@@ -34,7 +34,7 @@
 
 - [HK 416 D20RS: .223 Remington 36gr JHP (20"barrel, 30 rd. mag)](#hk-416-d20rs-223-remington-36gr-jhp-20barrel-30-rd-mag)
 
-* [7.62x51mm NATO](#762x51mm-nato)
+### [7.62x51mm NATO](#762x51mm-nato)
 
 - [FN MK 17 CQC: 7.62x51mm NATO M80 (13"barrel, 20 rd. mag)](#fn-mk-17-cqc-762x51mm-nato-m80-13barrel-20-rd-mag)
 
@@ -54,15 +54,15 @@
 
 - [H&K G3: 7.62x51mm NATO MK319 MOD 0 (17.7"barrel, 20 rd. mag)](#h&k-g3-762x51mm-nato-mk319-mod-0-177barrel-20-rd-mag)
 
-* [.40 S&W](#40-s&w)
+### [.40 S&W](#40-s&w)
 
 - [Glock 22: .40 S&W 165 gr Federal FMJ (4.49"barrel, 15 rd. mag)](#glock-22-40-s&w-165-gr-federal-fmj-449barrel-15-rd-mag)
 
-* [7x57mm](#7x57mm)
+### [7x57mm](#7x57mm)
 
 - [Mauser 1898: 7x57mm Spitzer (24"barrel, 5 rd. mag)](#mauser-1898-7x57mm-spitzer-24barrel-5-rd-mag)
 
-* [.50 BMG](#50-bmg)
+### [.50 BMG](#50-bmg)
 
 - [M82A1: Cartridge, caliber .50, ball, M33 (29"barrel, 10 rd. mag)](#m82a1-cartridge-caliber-50-ball-m33-29barrel-10-rd-mag)
 
