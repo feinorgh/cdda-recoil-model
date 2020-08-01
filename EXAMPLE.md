@@ -1,16 +1,18 @@
 # 9x19mm Parabellum:
 ## Beretta M9A1: 9x19mm 115 gr Federal FMJ (4.9"barrel, 15 rd. mag)
-Nominal Muzzle Velocity: 360.0 m/s
- Actual Muzzle Velocity: 360.2 m/s
-Bullet Energy: 482.8 J, Damage Potential: 21
-Propellant to bullet ratio: 0.04
+* Nominal Muzzle Velocity: 360.0 m/s
+* Actual Muzzle Velocity: 360.2 m/s
+* Bullet Energy: 482.8 J, Damage Potential: 21
+* Propellant to bullet ratio: 0.04
  - Fully loaded: 3.20 J
  - Last shot: 3.73 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -54,7 +56,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1171|2; crouched 0.0585|1; prone 0.0234|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -98,7 +102,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0969|1; crouched 0.0485|1; prone 0.0194|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -142,7 +148,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1048|2; crouched 0.0524|1; prone 0.0210|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -187,17 +195,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## Beretta M9A1: 9x19mm 124 gr Underwood FMJ +P (4.9"barrel, 15 rd. mag)
-Nominal Muzzle Velocity: 373.0 m/s
- Actual Muzzle Velocity: 373.3 m/s
-Bullet Energy: 559.3 J, Damage Potential: 23
-Propellant to bullet ratio: 0.04
+* Nominal Muzzle Velocity: 373.0 m/s
+* Actual Muzzle Velocity: 373.3 m/s
+* Bullet Energy: 559.3 J, Damage Potential: 23
+* Propellant to bullet ratio: 0.04
  - Fully loaded: 3.99 J
  - Last shot: 4.68 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -241,7 +251,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1468|2; crouched 0.0734|1; prone 0.0294|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -285,7 +297,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1216|2; crouched 0.0608|1; prone 0.0243|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -329,7 +343,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1314|2; crouched 0.0657|1; prone 0.0263|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -374,17 +390,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## Glock 19M: 9x19mm 115 gr Federal FMJ (4.02"barrel, 15 rd. mag)
-Nominal Muzzle Velocity: 360.0 m/s
- Actual Muzzle Velocity: 359.4 m/s
-Bullet Energy: 482.8 J, Damage Potential: 21
-Propellant to bullet ratio: 0.04
+* Nominal Muzzle Velocity: 360.0 m/s
+* Actual Muzzle Velocity: 359.4 m/s
+* Bullet Energy: 482.8 J, Damage Potential: 21
+* Propellant to bullet ratio: 0.04
  - Fully loaded: 4.71 J
  - Last shot: 5.95 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -428,7 +446,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1867|3; crouched 0.0934|1; prone 0.0373|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -472,7 +492,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1546|2; crouched 0.0773|1; prone 0.0309|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -516,7 +538,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1672|2; crouched 0.0836|1; prone 0.0334|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -561,17 +585,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## Glock 19M: 9x19mm 124 gr Underwood FMJ +P (4.02"barrel, 15 rd. mag)
-Nominal Muzzle Velocity: 373.0 m/s
- Actual Muzzle Velocity: 372.4 m/s
-Bullet Energy: 559.3 J, Damage Potential: 23
-Propellant to bullet ratio: 0.04
+* Nominal Muzzle Velocity: 373.0 m/s
+* Actual Muzzle Velocity: 372.4 m/s
+* Bullet Energy: 559.3 J, Damage Potential: 23
+* Propellant to bullet ratio: 0.04
  - Fully loaded: 5.84 J
  - Last shot: 7.46 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -615,7 +641,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.2342|3; crouched 0.1171|2; prone 0.0468|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -659,7 +687,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1939|3; crouched 0.0970|1; prone 0.0388|1
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -703,7 +733,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.2097|3; crouched 0.1048|2; prone 0.0419|1
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -748,17 +780,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## Glock 17: 9x19mm 115 gr Federal FMJ (4.49"barrel, 17 rd. mag)
-Nominal Muzzle Velocity: 360.0 m/s
- Actual Muzzle Velocity: 359.8 m/s
-Bullet Energy: 482.8 J, Damage Potential: 21
-Propellant to bullet ratio: 0.04
+* Nominal Muzzle Velocity: 360.0 m/s
+* Actual Muzzle Velocity: 359.8 m/s
+* Bullet Energy: 482.8 J, Damage Potential: 21
+* Propellant to bullet ratio: 0.04
  - Fully loaded: 4.42 J
  - Last shot: 5.67 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -802,7 +836,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1779|3; crouched 0.0890|1; prone 0.0356|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -846,7 +882,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1473|2; crouched 0.0737|1; prone 0.0295|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -890,7 +928,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1593|2; crouched 0.0797|1; prone 0.0319|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -935,17 +975,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## Glock 17: 9x19mm 124 gr Underwood FMJ +P (4.49"barrel, 17 rd. mag)
-Nominal Muzzle Velocity: 373.0 m/s
- Actual Muzzle Velocity: 372.8 m/s
-Bullet Energy: 559.3 J, Damage Potential: 23
-Propellant to bullet ratio: 0.04
+* Nominal Muzzle Velocity: 373.0 m/s
+* Actual Muzzle Velocity: 372.8 m/s
+* Bullet Energy: 559.3 J, Damage Potential: 23
+* Propellant to bullet ratio: 0.04
  - Fully loaded: 5.48 J
  - Last shot: 7.11 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -989,7 +1031,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.2231|3; crouched 0.1116|2; prone 0.0446|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1033,7 +1077,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1848|3; crouched 0.0924|1; prone 0.0370|1
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1077,7 +1123,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1998|3; crouched 0.0999|1; prone 0.0400|1
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1122,17 +1170,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## MP5-N: 9x19mm 115 gr Federal FMJ (8.9"barrel, 30 rd. mag)
-Nominal Muzzle Velocity: 360.0 m/s
- Actual Muzzle Velocity: 364.2 m/s
-Bullet Energy: 482.8 J, Damage Potential: 21
-Propellant to bullet ratio: 0.04
+* Nominal Muzzle Velocity: 360.0 m/s
+* Actual Muzzle Velocity: 364.2 m/s
+* Bullet Energy: 482.8 J, Damage Potential: 21
+* Propellant to bullet ratio: 0.04
  - Fully loaded: 1.20 J
  - Last shot: 1.34 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1176,7 +1226,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0421|1; crouched 0.0211|0; prone 0.0084|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1220,7 +1272,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0349|0; crouched 0.0174|0; prone 0.0070|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1264,7 +1318,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0377|1; crouched 0.0189|0; prone 0.0075|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1309,17 +1365,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## MP5-N: 9x19mm 124 gr Underwood FMJ +P (8.9"barrel, 30 rd. mag)
-Nominal Muzzle Velocity: 373.0 m/s
- Actual Muzzle Velocity: 377.4 m/s
-Bullet Energy: 559.3 J, Damage Potential: 23
-Propellant to bullet ratio: 0.04
+* Nominal Muzzle Velocity: 373.0 m/s
+* Actual Muzzle Velocity: 377.4 m/s
+* Bullet Energy: 559.3 J, Damage Potential: 23
+* Propellant to bullet ratio: 0.04
  - Fully loaded: 1.50 J
  - Last shot: 1.68 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1363,7 +1421,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0528|1; crouched 0.0264|0; prone 0.0106|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1407,7 +1467,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0438|1; crouched 0.0219|0; prone 0.0088|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1451,7 +1513,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0473|1; crouched 0.0237|0; prone 0.0095|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1497,17 +1561,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 # 5.56x45mm NATO:
 ## M4A1: 5.56x45mm NATO M855A1 (14.5"barrel, 30 rd. mag)
-Nominal Muzzle Velocity: 961.0 m/s
- Actual Muzzle Velocity: 927.6 m/s
-Bullet Energy: 1856.3 J, Damage Potential: 43
-Propellant to bullet ratio: 0.42
+* Nominal Muzzle Velocity: 961.0 m/s
+* Actual Muzzle Velocity: 927.6 m/s
+* Bullet Energy: 1856.3 J, Damage Potential: 43
+* Propellant to bullet ratio: 0.42
  - Fully loaded: 6.23 J
  - Last shot: 7.00 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -1551,7 +1617,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0824|1; crouched 0.0412|1; prone 0.0165|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -1595,7 +1663,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0655|1; crouched 0.0328|0; prone 0.0131|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -1639,7 +1709,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0725|1; crouched 0.0363|1; prone 0.0145|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1684,17 +1756,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## M4A1: .223 Remington 36gr JHP (14.5"barrel, 30 rd. mag)
-Nominal Muzzle Velocity: 1140.0 m/s
- Actual Muzzle Velocity: 1041.1 m/s
-Bullet Energy: 1514.0 J, Damage Potential: 38
-Propellant to bullet ratio: 0.78
+* Nominal Muzzle Velocity: 1140.0 m/s
+* Actual Muzzle Velocity: 1041.1 m/s
+* Bullet Energy: 1514.0 J, Damage Potential: 38
+* Propellant to bullet ratio: 0.78
  - Fully loaded: 4.97 J
  - Last shot: 5.47 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -1738,7 +1812,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0645|1; crouched 0.0322|0; prone 0.0129|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -1782,7 +1858,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0512|1; crouched 0.0256|0; prone 0.0102|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -1826,7 +1904,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0567|1; crouched 0.0283|0; prone 0.0113|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -1871,17 +1951,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## M27 IAR: 5.56x45mm NATO M855A1 (16.5"barrel, 30 rd. mag)
-Nominal Muzzle Velocity: 961.0 m/s
- Actual Muzzle Velocity: 939.8 m/s
-Bullet Energy: 1856.3 J, Damage Potential: 43
-Propellant to bullet ratio: 0.42
+* Nominal Muzzle Velocity: 961.0 m/s
+* Actual Muzzle Velocity: 939.8 m/s
+* Bullet Energy: 1856.3 J, Damage Potential: 43
+* Propellant to bullet ratio: 0.42
  - Fully loaded: 5.14 J
  - Last shot: 5.64 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -1925,7 +2007,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0664|1; crouched 0.0332|0; prone 0.0133|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -1969,7 +2053,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0528|1; crouched 0.0264|0; prone 0.0106|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2013,7 +2099,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0584|1; crouched 0.0292|0; prone 0.0117|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -2058,17 +2146,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## M27 IAR: .223 Remington 36gr JHP (16.5"barrel, 30 rd. mag)
-Nominal Muzzle Velocity: 1140.0 m/s
- Actual Muzzle Velocity: 1061.9 m/s
-Bullet Energy: 1514.0 J, Damage Potential: 38
-Propellant to bullet ratio: 0.78
+* Nominal Muzzle Velocity: 1140.0 m/s
+* Actual Muzzle Velocity: 1061.9 m/s
+* Bullet Energy: 1514.0 J, Damage Potential: 38
+* Propellant to bullet ratio: 0.78
  - Fully loaded: 4.14 J
  - Last shot: 4.47 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2112,7 +2202,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0526|1; crouched 0.0263|0; prone 0.0105|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2156,7 +2248,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0418|1; crouched 0.0209|0; prone 0.0084|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2200,7 +2294,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0463|1; crouched 0.0231|0; prone 0.0093|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -2245,17 +2341,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## HK 416 D20RS: 5.56x45mm NATO M855A1 (20"barrel, 30 rd. mag)
-Nominal Muzzle Velocity: 961.0 m/s
- Actual Muzzle Velocity: 961.0 m/s
-Bullet Energy: 1856.3 J, Damage Potential: 43
-Propellant to bullet ratio: 0.42
+* Nominal Muzzle Velocity: 961.0 m/s
+* Actual Muzzle Velocity: 961.0 m/s
+* Bullet Energy: 1856.3 J, Damage Potential: 43
+* Propellant to bullet ratio: 0.42
  - Fully loaded: 5.19 J
  - Last shot: 5.67 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2299,7 +2397,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0668|1; crouched 0.0334|0; prone 0.0134|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2343,7 +2443,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0531|1; crouched 0.0265|0; prone 0.0106|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2387,7 +2489,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0587|1; crouched 0.0294|0; prone 0.0117|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -2432,17 +2536,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## HK 416 D20RS: .223 Remington 36gr JHP (20"barrel, 30 rd. mag)
-Nominal Muzzle Velocity: 1140.0 m/s
- Actual Muzzle Velocity: 1098.3 m/s
-Bullet Energy: 1514.0 J, Damage Potential: 38
-Propellant to bullet ratio: 0.78
+* Nominal Muzzle Velocity: 1140.0 m/s
+* Actual Muzzle Velocity: 1098.3 m/s
+* Bullet Energy: 1514.0 J, Damage Potential: 38
+* Propellant to bullet ratio: 0.78
  - Fully loaded: 4.27 J
  - Last shot: 4.60 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2486,7 +2592,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0541|1; crouched 0.0271|0; prone 0.0108|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2530,7 +2638,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0430|1; crouched 0.0215|0; prone 0.0086|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2574,7 +2684,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.0476|1; crouched 0.0238|0; prone 0.0095|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -2620,17 +2732,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 # 7.62x51mm NATO:
 ## FN MK 17 CQC: 7.62x51mm NATO M80 (13"barrel, 20 rd. mag)
-Nominal Muzzle Velocity: 850.0 m/s
- Actual Muzzle Velocity: 802.3 m/s
-Bullet Energy: 3442.7 J, Damage Potential: 58
-Propellant to bullet ratio: 0.31
+* Nominal Muzzle Velocity: 850.0 m/s
+* Actual Muzzle Velocity: 802.3 m/s
+* Bullet Energy: 3442.7 J, Damage Potential: 58
+* Propellant to bullet ratio: 0.31
  - Fully loaded: 16.41 J
  - Last shot: 18.63 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2674,7 +2788,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.2194|3; crouched 0.1097|2; prone 0.0439|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2718,7 +2834,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1744|2; crouched 0.0872|1; prone 0.0349|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2762,7 +2880,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1930|3; crouched 0.0965|1; prone 0.0386|1
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -2807,17 +2927,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## FN MK 17 CQC: 7.62x51mm NATO M80A1 (13"barrel, 20 rd. mag)
-Nominal Muzzle Velocity: 931.2 m/s
- Actual Muzzle Velocity: 881.3 m/s
-Bullet Energy: 3650.6 J, Damage Potential: 60
-Propellant to bullet ratio: 0.34
+* Nominal Muzzle Velocity: 931.2 m/s
+* Actual Muzzle Velocity: 881.3 m/s
+* Bullet Energy: 3650.6 J, Damage Potential: 60
+* Propellant to bullet ratio: 0.34
  - Fully loaded: 16.72 J
  - Last shot: 18.83 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2861,7 +2983,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.2217|3; crouched 0.1109|2; prone 0.0443|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2905,7 +3029,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1762|3; crouched 0.0881|1; prone 0.0352|1
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -2949,7 +3075,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1950|3; crouched 0.0975|1; prone 0.0390|1
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -2994,17 +3122,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## FN MK 17 CQC: 7.62x51mm NATO MK319 MOD 0 (13"barrel, 20 rd. mag)
-Nominal Muzzle Velocity: 890.0 m/s
- Actual Muzzle Velocity: 845.9 m/s
-Bullet Energy: 3334.7 J, Damage Potential: 57
-Propellant to bullet ratio: 0.35
+* Nominal Muzzle Velocity: 890.0 m/s
+* Actual Muzzle Velocity: 845.9 m/s
+* Bullet Energy: 3334.7 J, Damage Potential: 57
+* Propellant to bullet ratio: 0.35
  - Fully loaded: 15.41 J
  - Last shot: 17.57 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3048,7 +3178,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.2069|3; crouched 0.1035|1; prone 0.0414|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3092,7 +3224,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1645|2; crouched 0.0822|1; prone 0.0329|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3136,7 +3270,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1820|3; crouched 0.0910|1; prone 0.0364|1
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -3181,17 +3317,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## M24: 7.62x51mm NATO M80 (24"barrel, 5 rd. mag)
-Nominal Muzzle Velocity: 850.0 m/s
- Actual Muzzle Velocity: 850.0 m/s
-Bullet Energy: 3442.7 J, Damage Potential: 58
-Propellant to bullet ratio: 0.31
+* Nominal Muzzle Velocity: 850.0 m/s
+* Actual Muzzle Velocity: 850.0 m/s
+* Bullet Energy: 3442.7 J, Damage Potential: 58
+* Propellant to bullet ratio: 0.31
  - Fully loaded: 14.21 J
  - Last shot: 14.54 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3235,7 +3373,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1713|2; crouched 0.0856|1; prone 0.0343|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3279,7 +3419,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1361|2; crouched 0.0681|1; prone 0.0272|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3323,7 +3465,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1507|2; crouched 0.0753|1; prone 0.0301|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -3368,17 +3512,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## M24: 7.62x51mm NATO M80A1 (24"barrel, 5 rd. mag)
-Nominal Muzzle Velocity: 931.2 m/s
- Actual Muzzle Velocity: 942.3 m/s
-Bullet Energy: 3650.6 J, Damage Potential: 60
-Propellant to bullet ratio: 0.34
+* Nominal Muzzle Velocity: 931.2 m/s
+* Actual Muzzle Velocity: 942.3 m/s
+* Bullet Energy: 3650.6 J, Damage Potential: 60
+* Propellant to bullet ratio: 0.34
  - Fully loaded: 14.65 J
  - Last shot: 14.97 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3422,7 +3568,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1763|3; crouched 0.0881|1; prone 0.0353|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3466,7 +3614,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1401|2; crouched 0.0701|1; prone 0.0280|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3510,7 +3660,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1551|2; crouched 0.0775|1; prone 0.0310|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -3555,17 +3707,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## M24: 7.62x51mm NATO MK319 MOD 0 (24"barrel, 5 rd. mag)
-Nominal Muzzle Velocity: 890.0 m/s
- Actual Muzzle Velocity: 899.8 m/s
-Bullet Energy: 3334.7 J, Damage Potential: 57
-Propellant to bullet ratio: 0.35
+* Nominal Muzzle Velocity: 890.0 m/s
+* Actual Muzzle Velocity: 899.8 m/s
+* Bullet Energy: 3334.7 J, Damage Potential: 57
+* Propellant to bullet ratio: 0.35
  - Fully loaded: 13.50 J
  - Last shot: 13.83 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3609,7 +3763,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1628|2; crouched 0.0814|1; prone 0.0326|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3653,7 +3809,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1294|2; crouched 0.0647|1; prone 0.0259|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3697,7 +3855,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1432|2; crouched 0.0716|1; prone 0.0286|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -3742,17 +3902,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## H&K G3: 7.62x51mm NATO M80 (17.7"barrel, 20 rd. mag)
-Nominal Muzzle Velocity: 850.0 m/s
- Actual Muzzle Velocity: 822.7 m/s
-Bullet Energy: 3442.7 J, Damage Potential: 58
-Propellant to bullet ratio: 0.31
+* Nominal Muzzle Velocity: 850.0 m/s
+* Actual Muzzle Velocity: 822.7 m/s
+* Bullet Energy: 3442.7 J, Damage Potential: 58
+* Propellant to bullet ratio: 0.31
  - Fully loaded: 14.65 J
  - Last shot: 16.30 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3796,7 +3958,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1919|3; crouched 0.0960|1; prone 0.0384|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3840,7 +4004,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1526|2; crouched 0.0763|1; prone 0.0305|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3884,7 +4050,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1688|2; crouched 0.0844|1; prone 0.0338|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -3929,17 +4097,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## H&K G3: 7.62x51mm NATO M80A1 (17.7"barrel, 20 rd. mag)
-Nominal Muzzle Velocity: 931.2 m/s
- Actual Muzzle Velocity: 907.4 m/s
-Bullet Energy: 3650.6 J, Damage Potential: 60
-Propellant to bullet ratio: 0.34
+* Nominal Muzzle Velocity: 931.2 m/s
+* Actual Muzzle Velocity: 907.4 m/s
+* Bullet Energy: 3650.6 J, Damage Potential: 60
+* Propellant to bullet ratio: 0.34
  - Fully loaded: 15.03 J
  - Last shot: 16.61 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -3983,7 +4153,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1956|3; crouched 0.0978|1; prone 0.0391|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4027,7 +4199,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1555|2; crouched 0.0777|1; prone 0.0311|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4071,7 +4245,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1720|2; crouched 0.0860|1; prone 0.0344|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -4116,17 +4292,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 
 ## H&K G3: 7.62x51mm NATO MK319 MOD 0 (17.7"barrel, 20 rd. mag)
-Nominal Muzzle Velocity: 890.0 m/s
- Actual Muzzle Velocity: 869.0 m/s
-Bullet Energy: 3334.7 J, Damage Potential: 57
-Propellant to bullet ratio: 0.35
+* Nominal Muzzle Velocity: 890.0 m/s
+* Actual Muzzle Velocity: 869.0 m/s
+* Bullet Energy: 3334.7 J, Damage Potential: 57
+* Propellant to bullet ratio: 0.35
  - Fully loaded: 13.81 J
  - Last shot: 15.43 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4170,7 +4348,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1817|3; crouched 0.0908|1; prone 0.0363|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4214,7 +4394,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1444|2; crouched 0.0722|1; prone 0.0289|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4258,7 +4440,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1598|2; crouched 0.0799|1; prone 0.0320|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -4304,17 +4488,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 # .40 S&W:
 ## Glock 22: .40 S&W 165 gr Federal FMJ (4.49"barrel, 15 rd. mag)
-Nominal Muzzle Velocity: 340.0 m/s
- Actual Muzzle Velocity: 340.5 m/s
-Bullet Energy: 617.9 J, Damage Potential: 24
-Propellant to bullet ratio: 0.04
+* Nominal Muzzle Velocity: 340.0 m/s
+* Actual Muzzle Velocity: 340.5 m/s
+* Bullet Energy: 617.9 J, Damage Potential: 24
+* Propellant to bullet ratio: 0.04
  - Fully loaded: 7.67 J
  - Last shot: 10.19 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -4358,7 +4544,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.3199|5; crouched 0.1600|2; prone 0.0640|1
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -4402,7 +4590,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.2649|4; crouched 0.1325|2; prone 0.0530|1
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -4446,7 +4636,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.2865|4; crouched 0.1432|2; prone 0.0573|1
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -4492,17 +4684,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 # 7x57mm:
 ## Mauser 1898: 7x57mm Spitzer (24"barrel, 5 rd. mag)
-Nominal Muzzle Velocity: 823.0 m/s
- Actual Muzzle Velocity: 831.0 m/s
-Bullet Energy: 3081.8 J, Damage Potential: 55
-Propellant to bullet ratio: 0.30
+* Nominal Muzzle Velocity: 823.0 m/s
+* Actual Muzzle Velocity: 831.0 m/s
+* Bullet Energy: 3081.8 J, Damage Potential: 55
+* Propellant to bullet ratio: 0.30
  - Fully loaded: 14.35 J
  - Last shot: 14.72 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4546,7 +4740,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1733|2; crouched 0.0867|1; prone 0.0347|0
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4590,7 +4786,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1378|2; crouched 0.0689|1; prone 0.0276|0
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4634,7 +4832,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 0.1525|2; crouched 0.0762|1; prone 0.0305|0
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
@@ -4680,17 +4880,19 @@ Skill vs. Throw-off (radians | quarter degrees):
 
 # .50 BMG:
 ## M82A1: Cartridge, caliber .50, ball, M33 (29"barrel, 10 rd. mag)
-Nominal Muzzle Velocity: 890.0 m/s
- Actual Muzzle Velocity: 811.7 m/s
-Bullet Energy: 18135.1 J, Damage Potential: 134
-Propellant to bullet ratio: 0.33
+* Nominal Muzzle Velocity: 890.0 m/s
+* Actual Muzzle Velocity: 811.7 m/s
+* Bullet Energy: 18135.1 J, Damage Potential: 134
+* Propellant to bullet ratio: 0.33
  - Fully loaded: 103.75 J
  - Last shot: 111.39 J
 
 ### Throwoff
 
 #### Alice Smallframe (1.57 m, 45.00 kg, STR: 5)
+
 Shoulder height: 1.26 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4734,7 +4936,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 1.3116|19; crouched 0.6558|9; prone 0.2623|4
 
 #### Burly Bob (1.95 m, 82.00 kg, STR: 8)
+
 Shoulder height: 1.56 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4778,7 +4982,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 1.0426|15; crouched 0.5213|7; prone 0.2085|3
 
 #### Commando Cassie (1.64 m, 58.00 kg, STR: 6)
+
 Shoulder height: 1.31 m
+
 Using rifle shooting stance
 
 ##### Full Magazine
@@ -4822,7 +5028,9 @@ Skill vs. Throw-off (radians | quarter degrees):
 * 10: 1.1537|17; crouched 0.5769|8; prone 0.2307|3
 
 #### Damaged Dan (1.78 m, 75.00 kg, STR: 3)
+
 Shoulder height: 1.42 m
+
 Using one-handed pistol shooting stance
 
 ##### Full Magazine
