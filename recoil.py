@@ -315,13 +315,13 @@ def calculate_throwoff(shooter, gun, recoil_full, recoil_empty):
     # the shooter is given a backwards rotation around the center of mass,
     # located at shooter's height / 2
     # where r = shooter's height / (4/5) (4 5ths being around shoulder height)
-    print(f"\nShoulder height: {h_shoulder:.2f} m")
+    print(f"\n* Shoulder height: {h_shoulder:.2f} m")
     # rifles have three point anchoring (two hands + shoulder)
     if (gun.get("type") == "rifle" and not shooterdata.get("injured_hand")):
-        print("\nUsing rifle shooting stance")
+        print("* Using rifle shooting stance")
         stance_factor = 3
     else:
-        print("\nUsing one-handed pistol shooting stance")
+        print("* Using one-handed pistol shooting stance")
         stance_factor = 1
 
     for recoil in [recoil_full, recoil_empty]:
@@ -336,11 +336,15 @@ def calculate_throwoff(shooter, gun, recoil_full, recoil_empty):
         # shoulder height - shooter_height / 2, which would lessen the
         # effect of angular momentum
         orbital_angular_momentum = h_shoulder * m_shooter * v_shooter
-        print(f"\nShooter backwards velocity: {v_shooter:.2f} m/s")
-        print(f"\nShooter raw orbital angular momentum: "
+        print(f"\n* Shooter backwards velocity: {v_shooter:.2f} m/s")
+        print(f"* Shooter raw orbital angular momentum: "
               f"{orbital_angular_momentum:.2f} rad/s")
 
-        print("\nSkill vs. Throw-off (radians | quarter degrees):\n")
+        # print("\nSkill vs. Throw-off (radians | quarter degrees):\n")
+        print("\n##### Throw-off, radians (quarter degrees)\n")
+        print("S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees\n")
+        print("| Skill | S (r) | S (¼d) | C (r) | C (¼d) | P (r) | P (¼d) |")
+        print("|------:|------:|-------:|------:|-------:|------:|-------:|")
 
         for skill in range(11):
             skill_factor = skill * 0.1  # 10 represents full handling
@@ -355,9 +359,9 @@ def calculate_throwoff(shooter, gun, recoil_full, recoil_empty):
             throwoff_c_qd = ((throwoff_c*180)/math.pi)/4
             throwoff_p = throwoff / 5
             throwoff_p_qd = ((throwoff_p*180)/math.pi)/4
-            print(f"* {skill}: {throwoff:.4f}|{throwoff_qd:.0f}; "
-                  f"crouched {throwoff_c:.4f}|{throwoff_c_qd:.0f}; "
-                  f"prone {throwoff_p:.4f}|{throwoff_p_qd:.0f}")
+            print(f"| {skill} | {throwoff:.4f} | {throwoff_qd:.0f} "
+                  f"| {throwoff_c:.4f} | {throwoff_c_qd:.0f} "
+                  f"| {throwoff_p:.4f} | {throwoff_p_qd:.0f} |")
 
 
 def show_recoil(gun, used_ammo):
@@ -373,6 +377,7 @@ def show_recoil(gun, used_ammo):
     damage = int(math.sqrt(e_bullet))
     print(f"* Bullet Energy: {e_bullet:.1f} J, Damage Potential: {damage}")
     print(f"* Propellant to bullet ratio: {prp_prj_ratio:.2f}")
+    print("\n### Recoil Energy to Shooter")
     print(f" - Fully loaded: {recoil_full:.2f} J")
     (recoil_empty, v_p, v_a) = calculate_recoil(gun, used_ammo, "empty")
     print(f" - Last shot: {recoil_empty:.2f} J")
@@ -385,7 +390,7 @@ def show_recoil(gun, used_ammo):
 if __name__ == "__main__":
     print("# Example Data for Recoil Model\n")
     print("## Table of Contents\n")
-    substitutions = re.compile(r"[\",.():]")
+    substitutions = re.compile(r"[\",.():&]")
     for guntype in WEAPONS:
         reference = substitutions.sub("", guntype).lower().replace(" ", "-")
         print(f"### [{guntype}](#{reference})\n")
