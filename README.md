@@ -16,6 +16,9 @@ models of firearms, ammunition, and shooters.
 See https://github.com/feinorgh/cdda-recoil-model/blob/master/recoil.py
 for details.
 
+There is an [example](EXAMPLE.md) output, showing the output from the
+very experimental model.
+
 The physical concept of recoil is based on the idea of conservation
 of momentum. https://en.wikipedia.org/wiki/Momentum
 
