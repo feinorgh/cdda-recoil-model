@@ -9,7 +9,7 @@ even handloading for Cataclysm: Dark Days Ahead.
 The physical concept of recoil is based on the idea of conservation
 of momentum. https://en.wikipedia.org/wiki/Momentum
 
-In the concept of a firearm it means that for the energy contained
+In the context of firearms it means that for the energy contained
 in the projectile fired, there is an equal but opposite force imparted
 on the firearm, and, in turn, the shooter.
 
