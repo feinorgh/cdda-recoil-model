@@ -1,10 +1,20 @@
 # A Proposal for an Alternative Firearm Model for CDDA
 
-This is meant to be an idea of physics based alternative model
+This is meant to be notes around ideas of physics based alternative models
 for recoil, noise, damage, automatic fire handling, and
 even handloading for Cataclysm: Dark Days Ahead.
 
+These are my personal notes, and nothing here is set in stone.
+
+Suggestions, criticism, and expert advice is welcome.
+
 ## Recoil
+
+For recoil, there is a "proof-of-concept" Python script, with simplified
+models of firearms, ammunition, and shooters.
+
+See https://github.com/feinorgh/cdda-recoil-model/blob/master/recoil.py
+for details.
 
 The physical concept of recoil is based on the idea of conservation
 of momentum. https://en.wikipedia.org/wiki/Momentum
@@ -23,7 +33,7 @@ referred to as "free recoil" can be calculated from a few known facts:
 * The mass of the firearm
 
 There's also a set of factors which may affect _felt_ recoil, which
-is more difficult to calculae reliably, but which can be estimated:
+is more difficult to calculate reliably, but which can be estimated:
 
 * Muzzle brake effect
 * Method of operation (action) of the firearm (blowback, various gas operations)
@@ -105,3 +115,137 @@ For gun mods:
 
 * Its effect on the mass of the firearm
 * Its effect on the recoil reduction of the firearm (in Joules)
+
+## External Ballistics
+
+To simulate the effect of drag, ballistic coefficients, bullet shapes, etc., may be
+overkill (pun intended) for CDDA, but some effects might contribute both to realism
+and fun (of both kinds) in the game.
+
+### Environmental Effects on Bullet Trajectory
+
+* Wind
+* Humidity
+* Ricochets
+* Fragmentation
+
+### "Barrier Blind" ammunition
+
+Certain types of ammunition (like the M855A1 Enhanced Performance Round) are designed to
+be able to penetrate intermediate barriers like car doors, windows, planks, even steel
+plates, without severely compromising lethality in a soft target.
+
+### Tracers
+
+Tracers could be fun, and could potentially set fire to things, and be used for attracting
+the attention of NPCs from a distance.
+
+### Sabots
+
+Long range sniping is not yet a thing, but for certain calibres (say .50 BMG) sabot rounds
+could be used to penetrate even armored vehicles and APCs.
+
+## Terminal Ballistics
+
+A model for taking into account penetration, energy dumped into the target, expansion,
+fragmentation, etc. could be made. There's a lot of ballistic data to be found online.
+
+If and when a more detailed model for injuries and damage becomes a thing in CDDA,
+terminal ballistics could take into account the effect of hitting bone, major blood vessels,
+nerves, and muscles.
+
+Also, terminal ballistics calculation would allow for overpenetration calculations. Certain
+rounds could pass through a number of zombies more or less unhindered. And, you could fire
+through cars, walls, and even trees in some circumstances.
+
+### Bullet types
+
+These are already modeled by damage modifiers in the current game, but could be expanded upon.
+
+* JHP
+* FMJ
+* Open Tip
+* Solid
+* Spitzer
+
+### Frangible ammunition
+
+These types of rounds disintegrate almost completely when they hit something, often leaving
+a visible mark. When hitting a body, they could have devastating superficial wounds,
+causing severe shock and pain, but could potentially be stopped completely by light
+body armor (even a leather coat).
+
+### Armor Piercing
+
+These are already modelled, but could also play into the putative "terminal ballistics"
+model above.
+
+### Explosive Rounds
+
+These could also have devastating effects on tissue and/or walls, locks, doors, etc.
+A good terminal ballistics model could take into account the damage dumped by the round
+itself when penetrating, and the effect of the explosion after penetration.
+
+## Other Effects
+
+### Noise
+
+The amount of energy transformed into noise is proportional to the escaped gases of the
+firearm. The more energy in the ejected gases, the larger the report.
+
+This effect is modeled by "gun loudness", but could be calculated as an effect of the
+energy released at discharge.
+
+Also, at longer distances, it's still possible to hear the crack of the shockwave of the
+bullet passing by, before you hear the sound of the firearm discharge. (Unless of course,
+the round is subsonic before it misses you. If it hits you, you probably have more pressing
+concerns than thinking about the noise.)
+
+### Ammunition Weight
+
+A fully loaded firearm weighs more than an empty firearm. For some firearms, this effect can be
+considerable. The recoil from a fully loaded Glock 19M is markedly less (at least theoretically),
+than firing the last round from the same firearm, due to the mass of the firearm including
+the cartridges still in the magazine.
+
+### Heat
+
+Firearms heat up when fired, some more than others. The energy imparted onto the receiver from
+the gases released may sometimes have a considerable effect on the rate of fire, the wear of
+the parts, on accuracy, and on the shooter itself, which may get burned on certain parts (say,
+the barrel of a FN MAG after firing 150 rounds into a gang of Kevlar Hulks).
+
+Some firearms may become so hot they cook-off a cartridge in the breech without the shooter
+pulling the trigger. Certain machine guns may continue to fire this way until they run out
+of ammo (or misfire).
+
+This could be simulated by estimating a heatup from a portion of the released energy of the
+ammo, and the heat capacity of the barrel/mechanism.
+
+Oh, and a hot barrel would glow bright in infrared, which may attract certain types of
+monsters (or repel others?).
+
+### Fouling
+
+There is already a model for fouling in the game.
+
+### Wear & Tear
+
+Some parts of a firearm can only withstand a certain number of shots. Recoil springs, lugs,
+firing pins, breech blocks, etc. may be worn out after 10000 to 50000 rounds fired.
+
+Similar to vehicles, a system for breaking down a specific part of a weapon, and to fix it,
+might be interesting, and also play into the various ways a firearm may malfunction.
+
+### Environmental Effects
+
+Cold weather conditions may cause firearms to lock up, as can humidity, dirt and debris,
+and, one can assume, general filth.
+
+### Interchangeable Parts and Firearm Disassembly
+
+Most firearms can be disassembled into smaller parts. You can fit a H&K G3 fully inside a
+messenger bag if you take it apart.
+
+It would be interesting to have to ability to take firearms apart and replace broken
+parts in one from another. This would be a system similar to vehicle engines.
