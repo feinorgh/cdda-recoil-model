@@ -124,7 +124,7 @@ For gun mods:
 
 ## External Ballistics
 
-To simulate the effect of drag, ballistic coefficients, bullet shapes, etc., may be
+Simulating the effects of drag, ballistic coefficients, bullet shapes, etc., may be
 overkill (pun intended) for CDDA, but some effects might contribute both to realism
 and fun (of both kinds) in the game.
 
