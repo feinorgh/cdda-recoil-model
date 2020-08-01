@@ -213,7 +213,7 @@ the cartridges still in the magazine.
 Firearms heat up when fired, some more than others. The energy imparted onto the receiver from
 the gases released may sometimes have a considerable effect on the rate of fire, the wear of
 the parts, on accuracy, and on the shooter itself, which may get burned on certain parts (say,
-the barrel of a FN MAG after firing 150 rounds into a gang of Kevlar Hulks).
+the barrel of a FN MAG after firing 150 rounds into a gaggle of Kevlar Hulks).
 
 Some firearms may become so hot they cook-off a cartridge in the breech without the shooter
 pulling the trigger. Certain machine guns may continue to fire this way until they run out
