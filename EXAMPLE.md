@@ -67,7 +67,7 @@
 - [M82A1: Cartridge, caliber .50, ball, M33 (29"barrel, 10 rd. mag)](#m82a1-cartridge-caliber-50-ball-m33-29barrel-10-rd-mag)
 
 # 9x19mm Parabellum:
-## Beretta M9A1: 9x19mm 115 gr Federal FMJ (4.9"barrel, 15 rd. mag)
+## Beretta M9A1: 9x19mm 115 gr Federal FMJ (4.9" barrel, 15 rd. mag)
 * Nominal Muzzle Velocity: 360.0 m/s
 * Actual Muzzle Velocity: 360.2 m/s
 * Bullet Energy: 482.8 J, Damage Potential: 21
@@ -284,7 +284,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.1991 | 3 | 0.0995 | 1 | 0.0398 | 1 |
 
 
-## Beretta M9A1: 9x19mm 124 gr Underwood FMJ +P (4.9"barrel, 15 rd. mag)
+## Beretta M9A1: 9x19mm 124 gr Underwood FMJ +P (4.9" barrel, 15 rd. mag)
 * Nominal Muzzle Velocity: 373.0 m/s
 * Actual Muzzle Velocity: 373.3 m/s
 * Bullet Energy: 559.3 J, Damage Potential: 23
@@ -501,7 +501,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.2497 | 4 | 0.1248 | 2 | 0.0499 | 1 |
 
 
-## Glock 19M: 9x19mm 115 gr Federal FMJ (4.02"barrel, 15 rd. mag)
+## Glock 19M: 9x19mm 115 gr Federal FMJ (4.02" barrel, 15 rd. mag)
 * Nominal Muzzle Velocity: 360.0 m/s
 * Actual Muzzle Velocity: 359.4 m/s
 * Bullet Energy: 482.8 J, Damage Potential: 21
@@ -718,7 +718,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.3176 | 5 | 0.1588 | 2 | 0.0635 | 1 |
 
 
-## Glock 19M: 9x19mm 124 gr Underwood FMJ +P (4.02"barrel, 15 rd. mag)
+## Glock 19M: 9x19mm 124 gr Underwood FMJ +P (4.02" barrel, 15 rd. mag)
 * Nominal Muzzle Velocity: 373.0 m/s
 * Actual Muzzle Velocity: 372.4 m/s
 * Bullet Energy: 559.3 J, Damage Potential: 23
@@ -935,7 +935,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.3983 | 6 | 0.1991 | 3 | 0.0797 | 1 |
 
 
-## Glock 17: 9x19mm 115 gr Federal FMJ (4.49"barrel, 17 rd. mag)
+## Glock 17: 9x19mm 115 gr Federal FMJ (4.49" barrel, 17 rd. mag)
 * Nominal Muzzle Velocity: 360.0 m/s
 * Actual Muzzle Velocity: 359.8 m/s
 * Bullet Energy: 482.8 J, Damage Potential: 21
@@ -1152,7 +1152,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.3026 | 4 | 0.1513 | 2 | 0.0605 | 1 |
 
 
-## Glock 17: 9x19mm 124 gr Underwood FMJ +P (4.49"barrel, 17 rd. mag)
+## Glock 17: 9x19mm 124 gr Underwood FMJ +P (4.49" barrel, 17 rd. mag)
 * Nominal Muzzle Velocity: 373.0 m/s
 * Actual Muzzle Velocity: 372.8 m/s
 * Bullet Energy: 559.3 J, Damage Potential: 23
@@ -1369,7 +1369,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.3795 | 5 | 0.1897 | 3 | 0.0759 | 1 |
 
 
-## MP5-N: 9x19mm 115 gr Federal FMJ (8.9"barrel, 30 rd. mag)
+## MP5-N: 9x19mm 115 gr Federal FMJ (8.9" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 360.0 m/s
 * Actual Muzzle Velocity: 364.2 m/s
 * Bullet Energy: 482.8 J, Damage Potential: 21
@@ -1586,7 +1586,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.0716 | 1 | 0.0358 | 1 | 0.0143 | 0 |
 
 
-## MP5-N: 9x19mm 124 gr Underwood FMJ +P (8.9"barrel, 30 rd. mag)
+## MP5-N: 9x19mm 124 gr Underwood FMJ +P (8.9" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 373.0 m/s
 * Actual Muzzle Velocity: 377.4 m/s
 * Bullet Energy: 559.3 J, Damage Potential: 23
@@ -1804,7 +1804,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 
 
 # 5.56x45mm NATO:
-## M4A1: 5.56x45mm NATO M855A1 (14.5"barrel, 30 rd. mag)
+## M4A1: 5.56x45mm NATO M855A1 (14.5" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 961.0 m/s
 * Actual Muzzle Velocity: 927.6 m/s
 * Bullet Energy: 1856.3 J, Damage Potential: 43
@@ -2021,7 +2021,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.3739 | 5 | 0.1869 | 3 | 0.0748 | 1 |
 
 
-## M4A1: .223 Remington 36gr JHP (14.5"barrel, 30 rd. mag)
+## M4A1: .223 Remington 36gr JHP (14.5" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 1140.0 m/s
 * Actual Muzzle Velocity: 1041.1 m/s
 * Bullet Energy: 1514.0 J, Damage Potential: 38
@@ -2238,7 +2238,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.2923 | 4 | 0.1462 | 2 | 0.0585 | 1 |
 
 
-## M27 IAR: 5.56x45mm NATO M855A1 (16.5"barrel, 30 rd. mag)
+## M27 IAR: 5.56x45mm NATO M855A1 (16.5" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 961.0 m/s
 * Actual Muzzle Velocity: 939.8 m/s
 * Bullet Energy: 1856.3 J, Damage Potential: 43
@@ -2455,7 +2455,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.3012 | 4 | 0.1506 | 2 | 0.0602 | 1 |
 
 
-## M27 IAR: .223 Remington 36gr JHP (16.5"barrel, 30 rd. mag)
+## M27 IAR: .223 Remington 36gr JHP (16.5" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 1140.0 m/s
 * Actual Muzzle Velocity: 1061.9 m/s
 * Bullet Energy: 1514.0 J, Damage Potential: 38
@@ -2672,7 +2672,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.2387 | 3 | 0.1193 | 2 | 0.0477 | 1 |
 
 
-## HK 416 D20RS: 5.56x45mm NATO M855A1 (20"barrel, 30 rd. mag)
+## HK 416 D20RS: 5.56x45mm NATO M855A1 (20" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 961.0 m/s
 * Actual Muzzle Velocity: 961.0 m/s
 * Bullet Energy: 1856.3 J, Damage Potential: 43
@@ -2889,7 +2889,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.3028 | 4 | 0.1514 | 2 | 0.0606 | 1 |
 
 
-## HK 416 D20RS: .223 Remington 36gr JHP (20"barrel, 30 rd. mag)
+## HK 416 D20RS: .223 Remington 36gr JHP (20" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 1140.0 m/s
 * Actual Muzzle Velocity: 1098.3 m/s
 * Bullet Energy: 1514.0 J, Damage Potential: 38
@@ -3107,7 +3107,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 
 
 # 7.62x51mm NATO:
-## FN MK 17 CQC: 7.62x51mm NATO M80 (13"barrel, 20 rd. mag)
+## FN MK 17 CQC: 7.62x51mm NATO M80 (13" barrel, 20 rd. mag)
 * Nominal Muzzle Velocity: 850.0 m/s
 * Actual Muzzle Velocity: 802.3 m/s
 * Bullet Energy: 3442.7 J, Damage Potential: 58
@@ -3324,7 +3324,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.9948 | 14 | 0.4974 | 7 | 0.1990 | 3 |
 
 
-## FN MK 17 CQC: 7.62x51mm NATO M80A1 (13"barrel, 20 rd. mag)
+## FN MK 17 CQC: 7.62x51mm NATO M80A1 (13" barrel, 20 rd. mag)
 * Nominal Muzzle Velocity: 931.2 m/s
 * Actual Muzzle Velocity: 881.3 m/s
 * Bullet Energy: 3650.6 J, Damage Potential: 60
@@ -3541,7 +3541,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 1.0055 | 14 | 0.5028 | 7 | 0.2011 | 3 |
 
 
-## FN MK 17 CQC: 7.62x51mm NATO MK319 MOD 0 (13"barrel, 20 rd. mag)
+## FN MK 17 CQC: 7.62x51mm NATO MK319 MOD 0 (13" barrel, 20 rd. mag)
 * Nominal Muzzle Velocity: 890.0 m/s
 * Actual Muzzle Velocity: 845.9 m/s
 * Bullet Energy: 3334.7 J, Damage Potential: 57
@@ -3758,7 +3758,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.9385 | 13 | 0.4692 | 7 | 0.1877 | 3 |
 
 
-## M24: 7.62x51mm NATO M80 (24"barrel, 5 rd. mag)
+## M24: 7.62x51mm NATO M80 (24" barrel, 5 rd. mag)
 * Nominal Muzzle Velocity: 850.0 m/s
 * Actual Muzzle Velocity: 850.0 m/s
 * Bullet Energy: 3442.7 J, Damage Potential: 58
@@ -3975,7 +3975,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.7767 | 11 | 0.3883 | 6 | 0.1553 | 2 |
 
 
-## M24: 7.62x51mm NATO M80A1 (24"barrel, 5 rd. mag)
+## M24: 7.62x51mm NATO M80A1 (24" barrel, 5 rd. mag)
 * Nominal Muzzle Velocity: 931.2 m/s
 * Actual Muzzle Velocity: 942.3 m/s
 * Bullet Energy: 3650.6 J, Damage Potential: 60
@@ -4192,7 +4192,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.7995 | 11 | 0.3998 | 6 | 0.1599 | 2 |
 
 
-## M24: 7.62x51mm NATO MK319 MOD 0 (24"barrel, 5 rd. mag)
+## M24: 7.62x51mm NATO MK319 MOD 0 (24" barrel, 5 rd. mag)
 * Nominal Muzzle Velocity: 890.0 m/s
 * Actual Muzzle Velocity: 899.8 m/s
 * Bullet Energy: 3334.7 J, Damage Potential: 57
@@ -4409,7 +4409,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.7385 | 11 | 0.3693 | 5 | 0.1477 | 2 |
 
 
-## H&K G3: 7.62x51mm NATO M80 (17.7"barrel, 20 rd. mag)
+## H&K G3: 7.62x51mm NATO M80 (17.7" barrel, 20 rd. mag)
 * Nominal Muzzle Velocity: 850.0 m/s
 * Actual Muzzle Velocity: 822.7 m/s
 * Bullet Energy: 3442.7 J, Damage Potential: 58
@@ -4626,7 +4626,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.8703 | 12 | 0.4352 | 6 | 0.1741 | 2 |
 
 
-## H&K G3: 7.62x51mm NATO M80A1 (17.7"barrel, 20 rd. mag)
+## H&K G3: 7.62x51mm NATO M80A1 (17.7" barrel, 20 rd. mag)
 * Nominal Muzzle Velocity: 931.2 m/s
 * Actual Muzzle Velocity: 907.4 m/s
 * Bullet Energy: 3650.6 J, Damage Potential: 60
@@ -4843,7 +4843,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 | 10 | 0.8869 | 13 | 0.4434 | 6 | 0.1774 | 3 |
 
 
-## H&K G3: 7.62x51mm NATO MK319 MOD 0 (17.7"barrel, 20 rd. mag)
+## H&K G3: 7.62x51mm NATO MK319 MOD 0 (17.7" barrel, 20 rd. mag)
 * Nominal Muzzle Velocity: 890.0 m/s
 * Actual Muzzle Velocity: 869.0 m/s
 * Bullet Energy: 3334.7 J, Damage Potential: 57
@@ -5061,7 +5061,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 
 
 # .40 S&W:
-## Glock 22: .40 S&W 165 gr Federal FMJ (4.49"barrel, 15 rd. mag)
+## Glock 22: .40 S&W 165 gr Federal FMJ (4.49" barrel, 15 rd. mag)
 * Nominal Muzzle Velocity: 340.0 m/s
 * Actual Muzzle Velocity: 340.5 m/s
 * Bullet Energy: 617.9 J, Damage Potential: 24
@@ -5279,7 +5279,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 
 
 # 7x57mm:
-## Mauser 1898: 7x57mm Spitzer (24"barrel, 5 rd. mag)
+## Mauser 1898: 7x57mm Spitzer (24" barrel, 5 rd. mag)
 * Nominal Muzzle Velocity: 823.0 m/s
 * Actual Muzzle Velocity: 831.0 m/s
 * Bullet Energy: 3081.8 J, Damage Potential: 55
@@ -5497,7 +5497,7 @@ S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees
 
 
 # .50 BMG:
-## M82A1: Cartridge, caliber .50, ball, M33 (29"barrel, 10 rd. mag)
+## M82A1: Cartridge, caliber .50, ball, M33 (29" barrel, 10 rd. mag)
 * Nominal Muzzle Velocity: 890.0 m/s
 * Actual Muzzle Velocity: 811.7 m/s
 * Bullet Energy: 18135.1 J, Damage Potential: 134

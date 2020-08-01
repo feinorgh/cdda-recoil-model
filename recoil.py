@@ -367,7 +367,7 @@ def calculate_throwoff(shooter, gun, recoil_full, recoil_empty):
 def show_recoil(gun, used_ammo):
     """Shows recoil energy of a gun/used_ammo combination"""
     print(f"## {gun['name']}: {used_ammo['name']} ({gun['barrel_length']}\""
-          f"barrel, {gun['capacity']} rd. mag)")
+          f" barrel, {gun['capacity']} rd. mag)")
     (recoil_full, v_p, v_a) = calculate_recoil(gun, used_ammo, "full")
     prp_prj_ratio = used_ammo.get("propellant_mass") / \
         used_ammo.get("bullet_mass")
