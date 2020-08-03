@@ -1,0 +1,30 @@
+{
+  "Alice Smallframe": {
+    "weight": 45000,
+    "height": 1570,
+    "strength": 5,
+    "skill": 1,
+    "injured_hand": false
+  },
+  "Burly Bob": {
+    "weight": 82000,
+    "height": 1950,
+    "strength": 8,
+    "skill": 5,
+    "injured_hand": false
+  },
+  "Commando Cassie": {
+    "weight": 58000,
+    "height": 1640,
+    "strength": 6,
+    "skill": 8,
+    "injured_hand": false
+  },
+  "Damaged Dan": {
+    "weight": 75000,
+    "height": 1780,
+    "strength": 3,
+    "skill": 5,
+    "injured_hand": true
+  }
+}

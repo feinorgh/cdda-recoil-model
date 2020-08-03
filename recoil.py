@@ -2,6 +2,7 @@
 
 """Demonstrates an alternative recoil model for CDDA"""
 
+import json
 import math
 import re
 import sys
@@ -9,260 +10,20 @@ import sys
 # All weights are in grams
 # Velocity is in m/s
 
-AMMO = {
-    "9x19mm Parabellum": [
-        {
-            "name": "9x19mm 115 gr Federal FMJ",
-            "type": "FMJ",
-            "bullet_mass": 7.45,
-            "propellant_mass": 0.27,
-            "ref_barrel": 4.65,
-            "v_muzzle": 360,
-            "cartridge_mass": 4 + 7.45 + 0.27,
-        },
-        {
-            "name": "9x19mm 124 gr Underwood FMJ +P",
-            "type": "FMJ +P",
-            "bullet_mass": 8.04,
-            "propellant_mass": 0.30,
-            "ref_barrel": 4.65,
-            "v_muzzle": 373,
-            "cartridge_mass": 4 + 8.04 + 0.30,
-        }
-    ],
-    ".40 S&W": [
-        {
-            "name": ".40 S&W 165 gr Federal FMJ",
-            "type": "FMJ",
-            "bullet_mass": 10.69,
-            "propellant_mass": 0.40,
-            "ref_barrel": 4,
-            "v_muzzle": 340,
-            "cartridge_mass": 15.9,
-        },
-    ],
-    "5.56x45mm NATO": [
-        {
-            "name": "5.56x45mm NATO M855A1",
-            "type": "FMJBT",
-            "bullet_mass": 4.02,
-            "propellant_mass": 1.69,
-            "ref_barrel": 20,
-            "v_muzzle": 961,
-            "cartridge_mass": 12.31,
-        },
-        {
-            "name": ".223 Remington 36gr JHP",
-            "type": "JHP",
-            "bullet_mass": 2.33,
-            "propellant_mass": 1.81,
-            "ref_barrel": 24,
-            "v_muzzle": 1140,
-            "cartridge_mass": 6.0 + 2.33 + 1.81,
-        },
-    ],
-    "7.62x51mm NATO": [
-        {
-            "name": "7.62x51mm NATO M80",
-            "type": "FMJ",
-            "bullet_mass": 9.53,
-            "propellant_mass": 2.98,
-            "ref_barrel": 24,
-            "v_muzzle": 850,
-            "cartridge_mass": 25.4,
-        },
-        {
-            "name": "7.62x51mm NATO M80A1",
-            "type": "FMJBT",
-            "bullet_mass": 8.42,
-            "propellant_mass": 2.90,
-            "ref_barrel": 22,
-            "v_muzzle": 931.2,
-            "cartridge_mass": 23.72,
-        },
-        {
-            "name": "7.62x51mm NATO MK319 MOD 0",
-            "type": "OTBT",
-            "bullet_mass": 8.42,
-            "propellant_mass": 2.95,
-            "ref_barrel": 22,
-            "v_muzzle": 890,
-            "cartridge_mass": 26.4,
-        }
-    ],
-    "7x57mm": [
-        {
-            "name": "7x57mm Spitzer",
-            "type": "Spitzer",
-            "bullet_mass": 9.1,
-            "propellant_mass": 2.75,
-            "ref_barrel": 22,
-            "v_muzzle": 823,
-            "cartridge_mass": 23.3,
-        },
-    ],
-    ".50 BMG": [
-        {
-            "name": "Cartridge, caliber .50, ball, M33",
-            "type": "FMJ",
-            "bullet_mass": 45.79,
-            "propellant_mass": 15.23,
-            "ref_barrel": 45,
-            "v_muzzle": 890,
-            "cartridge_mass": 114.18,
-        },
-    ],
-}
+AMMO = None
+WEAPONS = None
+SHOOTER = None
 
-WEAPONS = {
-    "9x19mm Parabellum": [
-        {
-            "name": "Beretta M9A1",
-            "type": "pistol",
-            "barrel_length": 4.9,
-            "mass": 961,
-            "mag_mass": 113,
-            "capacity": 15,
-        },
-        {
-            "name": "Glock 19M",
-            "type": "pistol",
-            "barrel_length": 4.02,
-            "mass": 600,
-            "mag_mass": 70,
-            "capacity": 15,
-        },
-        {
-            "name": "Glock 17",
-            "type": "pistol",
-            "barrel_length": 4.49,
-            "mass": 630,
-            "mag_mass": 75,
-            "capacity": 17,
-        },
-        {
-            "name": "MP5-N",
-            "type": "submachinegun",
-            "barrel_length": 8.9,
-            "mass": 2880,
-            "mag_mass": 170,
-            "capacity": 30,
-        },
-    ],
-    "5.56x45mm NATO": [
-        {
-            "name": "M4A1",
-            "type": "rifle",
-            "barrel_length": 14.5,
-            "mass": 2880,
-            "mag_mass": 112,
-            "capacity": 30,
-        },
-        {
-            "name": "M27 IAR",
-            "type": "rifle",
-            "barrel_length": 16.5,
-            "mass": 3700,
-            "mag_mass": 112,
-            "capacity": 30,
-        },
-        {
-            "name": "HK 416 D20RS",
-            "type": "rifle",
-            "barrel_length": 20,
-            "mass": 3885,
-            "mag_mass": 80,
-            "capacity": 30,
-        },
-    ],
-    "7.62x51mm NATO": [
-        {
-            "name": "FN MK 17 CQC",
-            "type": "rifle",
-            "barrel_length": 13,
-            "mass": 3490,
-            "mag_mass": 266,
-            "capacity": 20,
-        },
-        {
-            "name": "M24",
-            "type": "rifle",
-            "barrel_length": 24,
-            "mass": 5400,
-            "mag_mass": 0,
-            "capacity": 5,
-        },
-        {
-            "name": "H&K G3",
-            "type": "rifle",
-            "barrel_length": 17.7,
-            "mass": 4380,
-            "mag_mass": 134,
-            "capacity": 20,
-        },
-    ],
-    ".40 S&W": [
-        {
-            "name": "Glock 22",
-            "type": "pistol",
-            "barrel_length": 4.49,
-            "mass": 645,
-            "mag_mass": 80,
-            "capacity": 15,
-        },
-    ],
-    "7x57mm": [
-        {
-            "name": "Mauser 1898",
-            "type": "rifle",
-            "barrel_length": 24,
-            "mass": 4540,
-            "mag_mass": 0,
-            "capacity": 5,
-        },
-    ],
-    ".50 BMG": [
-        {
-            "name": "M82A1",
-            "type": "rifle",
-            "barrel_length": 29,
-            "mass": 14800,
-            "mag_mass": 720,
-            "capacity": 10,
-        },
-    ],
-}
-
-SHOOTER = {
-    "Alice Smallframe": {
-        "weight": 45000,
-        "height": 1570,
-        "strength": 5,
-        "skill": 1,
-        "injured_hand": False,
-    },
-    "Burly Bob": {
-        "weight": 82000,
-        "height": 1950,
-        "strength": 8,
-        "skill": 5,
-        "injured_hand": False,
-    },
-    "Commando Cassie": {
-        "weight": 58000,
-        "height": 1640,
-        "strength": 6,
-        "skill": 8,
-        "injured_hand": False,
-    },
-    "Damaged Dan": {
-        "weight": 75000,
-        "height": 1780,
-        "strength": 3,
-        "skill": 5,
-        "injured_hand": True,
-    },
-}
+def load_data():
+    with open("ammo.json", "r") as fp:
+        global AMMO
+        AMMO = json.load(fp)
+    with open("guns.json", "r") as fp:
+        global WEAPONS
+        WEAPONS = json.load(fp)
+    with open("shooters.json", "r") as fp:
+        global SHOOTER
+        SHOOTER = json.load(fp)
 
 
 def calculate_recoil(gun, used_ammo, configuration):
@@ -388,6 +149,7 @@ def show_recoil(gun, used_ammo):
 
 
 if __name__ == "__main__":
+    load_data()
     print("# Example Data for Recoil Model\n")
     print("## Table of Contents\n")
     substitutions = re.compile(r"[\",.():&+]")

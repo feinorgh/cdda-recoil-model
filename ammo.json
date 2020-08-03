@@ -1,0 +1,104 @@
+{
+  "9x19mm Parabellum": [
+    {
+      "name": "9x19mm 115 gr Federal FMJ",
+      "type": "FMJ",
+      "bullet_mass": 7.45,
+      "propellant_mass": 0.27,
+      "ref_barrel": 4.65,
+      "v_muzzle": 360,
+      "cartridge_mass": 11.72
+    },
+    {
+      "name": "9x19mm 124 gr Underwood FMJ +P",
+      "type": "FMJ +P",
+      "bullet_mass": 8.04,
+      "propellant_mass": 0.3,
+      "ref_barrel": 4.65,
+      "v_muzzle": 373,
+      "cartridge_mass": 12.34
+    }
+  ],
+  ".40 S&W": [
+    {
+      "name": ".40 S&W 165 gr Federal FMJ",
+      "type": "FMJ",
+      "bullet_mass": 10.69,
+      "propellant_mass": 0.4,
+      "ref_barrel": 4,
+      "v_muzzle": 340,
+      "cartridge_mass": 15.9
+    }
+  ],
+  "5.56x45mm NATO": [
+    {
+      "name": "5.56x45mm NATO M855A1",
+      "type": "FMJBT",
+      "bullet_mass": 4.02,
+      "propellant_mass": 1.69,
+      "ref_barrel": 20,
+      "v_muzzle": 961,
+      "cartridge_mass": 12.31
+    },
+    {
+      "name": ".223 Remington 36gr JHP",
+      "type": "JHP",
+      "bullet_mass": 2.33,
+      "propellant_mass": 1.81,
+      "ref_barrel": 24,
+      "v_muzzle": 1140,
+      "cartridge_mass": 10.14
+    }
+  ],
+  "7.62x51mm NATO": [
+    {
+      "name": "7.62x51mm NATO M80",
+      "type": "FMJ",
+      "bullet_mass": 9.53,
+      "propellant_mass": 2.98,
+      "ref_barrel": 24,
+      "v_muzzle": 850,
+      "cartridge_mass": 25.4
+    },
+    {
+      "name": "7.62x51mm NATO M80A1",
+      "type": "FMJBT",
+      "bullet_mass": 8.42,
+      "propellant_mass": 2.9,
+      "ref_barrel": 22,
+      "v_muzzle": 931.2,
+      "cartridge_mass": 23.72
+    },
+    {
+      "name": "7.62x51mm NATO MK319 MOD 0",
+      "type": "OTBT",
+      "bullet_mass": 8.42,
+      "propellant_mass": 2.95,
+      "ref_barrel": 22,
+      "v_muzzle": 890,
+      "cartridge_mass": 26.4
+    }
+  ],
+  "7x57mm": [
+    {
+      "name": "7x57mm Spitzer",
+      "type": "Spitzer",
+      "bullet_mass": 9.1,
+      "propellant_mass": 2.75,
+      "ref_barrel": 22,
+      "v_muzzle": 823,
+      "cartridge_mass": 23.3
+    }
+  ],
+  ".50 BMG": [
+    {
+      "name": "Cartridge, caliber .50, ball, M33",
+      "type": "FMJ",
+      "bullet_mass": 45.79,
+      "propellant_mass": 15.23,
+      "ref_barrel": 45,
+      "v_muzzle": 890,
+      "cartridge_mass": 114.18
+    }
+  ]
+}

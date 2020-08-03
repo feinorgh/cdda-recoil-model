@@ -1,0 +1,118 @@
+{
+  "9x19mm Parabellum": [
+    {
+      "name": "Beretta M9A1",
+      "type": "pistol",
+      "barrel_length": 4.9,
+      "mass": 961,
+      "mag_mass": 113,
+      "capacity": 15
+    },
+    {
+      "name": "Glock 19M",
+      "type": "pistol",
+      "barrel_length": 4.02,
+      "mass": 600,
+      "mag_mass": 70,
+      "capacity": 15
+    },
+    {
+      "name": "Glock 17",
+      "type": "pistol",
+      "barrel_length": 4.49,
+      "mass": 630,
+      "mag_mass": 75,
+      "capacity": 17
+    },
+    {
+      "name": "MP5-N",
+      "type": "submachinegun",
+      "barrel_length": 8.9,
+      "mass": 2880,
+      "mag_mass": 170,
+      "capacity": 30
+    }
+  ],
+  "5.56x45mm NATO": [
+    {
+      "name": "M4A1",
+      "type": "rifle",
+      "barrel_length": 14.5,
+      "mass": 2880,
+      "mag_mass": 112,
+      "capacity": 30
+    },
+    {
+      "name": "M27 IAR",
+      "type": "rifle",
+      "barrel_length": 16.5,
+      "mass": 3700,
+      "mag_mass": 112,
+      "capacity": 30
+    },
+    {
+      "name": "HK 416 D20RS",
+      "type": "rifle",
+      "barrel_length": 20,
+      "mass": 3885,
+      "mag_mass": 80,
+      "capacity": 30
+    }
+  ],
+  "7.62x51mm NATO": [
+    {
+      "name": "FN MK 17 CQC",
+      "type": "rifle",
+      "barrel_length": 13,
+      "mass": 3490,
+      "mag_mass": 266,
+      "capacity": 20
+    },
+    {
+      "name": "M24",
+      "type": "rifle",
+      "barrel_length": 24,
+      "mass": 5400,
+      "mag_mass": 0,
+      "capacity": 5
+    },
+    {
+      "name": "H&K G3",
+      "type": "rifle",
+      "barrel_length": 17.7,
+      "mass": 4380,
+      "mag_mass": 134,
+      "capacity": 20
+    }
+  ],
+  ".40 S&W": [
+    {
+      "name": "Glock 22",
+      "type": "pistol",
+      "barrel_length": 4.49,
+      "mass": 645,
+      "mag_mass": 80,
+      "capacity": 15
+    }
+  ],
+  "7x57mm": [
+    {
+      "name": "Mauser 1898",
+      "type": "rifle",
+      "barrel_length": 24,
+      "mass": 4540,
+      "mag_mass": 0,
+      "capacity": 5
+    }
+  ],
+  ".50 BMG": [
+    {
+      "name": "M82A1",
+      "type": "rifle",
+      "barrel_length": 29,
+      "mass": 14800,
+      "mag_mass": 720,
+      "capacity": 10
+    }
+  ]
+}
