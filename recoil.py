@@ -14,16 +14,18 @@ AMMO = None
 WEAPONS = None
 SHOOTER = None
 
+
 def load_data():
-    with open("ammo.json", "r") as fp:
+    """Loads the data from the JSON files"""
+    with open("ammo.json", "r") as in_fp:
         global AMMO
-        AMMO = json.load(fp)
-    with open("guns.json", "r") as fp:
+        AMMO = json.load(in_fp)
+    with open("guns.json", "r") as in_fp:
         global WEAPONS
-        WEAPONS = json.load(fp)
-    with open("shooters.json", "r") as fp:
+        WEAPONS = json.load(in_fp)
+    with open("shooters.json", "r") as in_fp:
         global SHOOTER
-        SHOOTER = json.load(fp)
+        SHOOTER = json.load(in_fp)
 
 
 def calculate_recoil(gun, used_ammo, configuration):
@@ -33,9 +35,7 @@ def calculate_recoil(gun, used_ammo, configuration):
     m_prp = used_ammo.get("propellant_mass")
     v_prj = used_ammo.get("v_muzzle")
     barrel_difference = gun.get("barrel_length") - used_ammo.get("ref_barrel")
-    # print(f"Barrel difference: {barrel_difference} in")
     delta_v = 0.333 * math.exp(0.00302 * v_prj) * barrel_difference
-    # print(f"Delta V: {delta_v} m/s")
     actual_v_prj = v_prj + delta_v
     if configuration == "full":
         m_ammo = gun.get("mag_mass") + gun.get("capacity") * \
@@ -103,7 +103,8 @@ def calculate_throwoff(shooter, gun, recoil_full, recoil_empty):
 
         # print("\nSkill vs. Throw-off (radians | quarter degrees):\n")
         print("\n##### Throw-off, radians (quarter degrees)\n")
-        print("S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees\n")
+        print("S = standing, C = crouching, P = prone, "
+              "r = radians, ¼d = quarter degrees\n")
         print("| Skill | S (r) | S (¼d) | C (r) | C (¼d) | P (r) | P (¼d) |")
         print("|------:|------:|-------:|------:|-------:|------:|-------:|")
 
@@ -158,8 +159,9 @@ if __name__ == "__main__":
         print(f"### [{guntype}](#{reference})\n")
         for weapon in WEAPONS[guntype]:
             for ammo in AMMO[guntype]:
-                title = f"{weapon['name']}: {ammo['name']} ({weapon['barrel_length']}\"" \
-                       f"barrel, {weapon['capacity']} rd. mag)"
+                title = f"{weapon['name']}: {ammo['name']} "\
+                        "({weapon['barrel_length']}\"" \
+                        f"barrel, {weapon['capacity']} rd. mag)"
                 link = substitutions.sub("", title).lower().replace(" ", "-")
                 print(f"- [{title}](#{link})\n")
 
