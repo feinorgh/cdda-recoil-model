@@ -119,3 +119,17 @@ class TestDisturbanceModel(unittest.TestCase):
             recoil.calculate_disturbance(self.shooter, gun, self.recoil_data, "standing")
         self.assertIn("action_type", str(context.exception).lower())
         self.assertIn("invalid_action", str(context.exception))
+
+    def test_negative_strength_raises_clear_error(self):
+        gun = {"type": "pistol", "support_class": "two_hand", "bore_offset": 0.05, "action_type": "locked_breech"}
+        bad_shooter = dict(self.shooter, strength=-5)
+        with self.assertRaises(ValueError) as context:
+            recoil.calculate_disturbance(bad_shooter, gun, self.recoil_data, "standing")
+        self.assertIn("strength", str(context.exception).lower())
+
+    def test_negative_skill_raises_clear_error(self):
+        gun = {"type": "pistol", "support_class": "two_hand", "bore_offset": 0.05, "action_type": "locked_breech"}
+        bad_shooter = dict(self.shooter, skill=-3)
+        with self.assertRaises(ValueError) as context:
+            recoil.calculate_disturbance(bad_shooter, gun, self.recoil_data, "standing")
+        self.assertIn("skill", str(context.exception).lower())

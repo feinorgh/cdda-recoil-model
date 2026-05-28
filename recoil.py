@@ -164,6 +164,21 @@ def calculate_disturbance(shooterdata, gun, recoil_data, stance):
     action_sharpness = ACTION_SHARPNESS[action_type]
     strength = shooterdata["strength"]
     skill = shooterdata.get("skill", 0)
+    
+    # Validate strength
+    if strength < 0:
+        raise ValueError(
+            f"Invalid strength '{strength}'. "
+            f"Strength must be non-negative."
+        )
+    
+    # Validate skill
+    if skill < 0:
+        raise ValueError(
+            f"Invalid skill '{skill}'. "
+            f"Skill must be non-negative."
+        )
+    
     bore_offset = gun_data["bore_offset"]
     ejecta_momentum = recoil_data["ejecta_momentum"]
 
