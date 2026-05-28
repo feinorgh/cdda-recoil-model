@@ -13,10 +13,16 @@ Suggestions, criticism, and expert advice is welcome.
 For recoil, there is a "proof-of-concept" Python script, with simplified
 models of firearms, ammunition, and shooters.
 
-See [recoil.py](recoil.py) for details, and implmentation comments.
+The current prototype now separates:
 
-There is an [example](EXAMPLE.md) output, showing the output from the
-very experimental model.
+* Free recoil physics from projectile and propellant momentum
+* Weapon-mechanics shaping, such as action type and support class
+* Shooter disturbance outputs, reported as aim kick and recovery time
+
+See [recoil.py](recoil.py) for details and implementation comments.
+
+There is an [example](EXAMPLE.md) output showing the generated report for the
+experimental model.
 
 The physical concept of recoil is based on the idea of conservation
 of momentum. https://en.wikipedia.org/wiki/Momentum
