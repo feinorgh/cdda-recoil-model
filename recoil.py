@@ -26,123 +26,226 @@ def load_data():
         SHOOTER = json.load(fp)
 
 
+ACTION_GAS_FACTORS = {
+    "bolt": 1.50,
+    "revolver": 1.55,
+    "locked_breech": 1.50,
+    "direct_blowback": 1.60,
+    "roller_delayed": 1.55,
+    "gas": 1.75,
+}
+
+ACTION_SHARPNESS = {
+    "bolt": 0.90,
+    "revolver": 1.05,
+    "locked_breech": 1.00,
+    "direct_blowback": 1.15,
+    "roller_delayed": 0.92,
+    "gas": 0.85,
+}
+
+SUPPORT_FACTORS = {
+    "one_hand": 0.70,
+    "two_hand": 1.00,
+    "braced": 1.15,
+    "stocked": 1.35,
+}
+
+STANCE_FACTORS = {
+    "standing": 1.00,
+    "crouching": 1.20,
+    "prone": 1.55,
+}
+
+TYPE_DEFAULTS = {
+    "pistol": {"action_type": "locked_breech", "support_class": "two_hand", "bore_offset": 0.05},
+    "submachinegun": {"action_type": "direct_blowback", "support_class": "stocked", "bore_offset": 0.04},
+    "rifle": {"action_type": "gas", "support_class": "stocked", "bore_offset": 0.06},
+}
+
+
+def get_gun_defaults(gun):
+    defaults = TYPE_DEFAULTS.get(gun.get("type"), TYPE_DEFAULTS["pistol"]).copy()
+    defaults.update(gun)
+    return defaults
+
+
+def calculate_free_recoil(gun, used_ammo, configuration):
+    gun_data = get_gun_defaults(gun)
+    m_gun = gun_data["mass"]
+    m_prj = used_ammo["bullet_mass"]
+    m_prp = used_ammo["propellant_mass"]
+    v_nominal = used_ammo["v_muzzle"]
+    barrel_difference = gun_data["barrel_length"] - used_ammo["ref_barrel"]
+    delta_v = 0.333 * math.exp(0.00302 * v_nominal) * barrel_difference
+    actual_v = v_nominal + delta_v
+
+    if configuration not in ("full", "empty"):
+        raise ValueError(
+            f"Invalid configuration '{configuration}'. "
+            f"Valid configurations are: empty, full"
+        )
+
+    if configuration == "full":
+        ammo_mass = gun_data["mag_mass"] + gun_data["capacity"] * used_ammo["cartridge_mass"]
+    else:
+        ammo_mass = gun_data["mag_mass"]
+
+    system_mass_kg = (m_gun + ammo_mass) / 1000
+    action_type = gun_data["action_type"]
+    if action_type not in ACTION_GAS_FACTORS:
+        valid_types = ", ".join(sorted(ACTION_GAS_FACTORS.keys()))
+        raise ValueError(
+            f"Invalid action_type '{action_type}'. "
+            f"Valid action types are: {valid_types}"
+        )
+    gas_factor = ACTION_GAS_FACTORS[action_type]
+    ejecta_momentum = ((m_prj * actual_v) + (m_prp * actual_v * gas_factor)) / 1000
+    recoil_velocity = ejecta_momentum / system_mass_kg
+    free_recoil_energy = ejecta_momentum ** 2 / (2 * system_mass_kg)
+
+    return {
+        "nominal_velocity": v_nominal,
+        "actual_velocity": actual_v,
+        "system_mass_kg": system_mass_kg,
+        "gas_factor": gas_factor,
+        "ejecta_momentum": ejecta_momentum,
+        "recoil_velocity": recoil_velocity,
+        "free_recoil_energy": free_recoil_energy,
+    }
+
+
+def resolve_support_class(shooterdata, gun_data):
+    if shooterdata.get("injured_hand"):
+        return "one_hand"
+    return gun_data.get("support_class", "two_hand")
+
+
+def calculate_disturbance(shooterdata, gun, recoil_data, stance):
+    gun_data = get_gun_defaults(gun)
+    
+    # Validate stance
+    if stance not in STANCE_FACTORS:
+        valid_stances = ", ".join(sorted(STANCE_FACTORS.keys()))
+        raise ValueError(
+            f"Invalid stance '{stance}'. "
+            f"Valid stances are: {valid_stances}"
+        )
+    
+    # Validate system_mass_kg
+    system_mass_kg = recoil_data["system_mass_kg"]
+    if system_mass_kg <= 0:
+        raise ValueError(
+            f"Invalid system_mass_kg '{system_mass_kg}'. "
+            f"System mass must be positive."
+        )
+    
+    # Validate action_type
+    action_type = gun_data["action_type"]
+    if action_type not in ACTION_SHARPNESS:
+        valid_types = ", ".join(sorted(ACTION_SHARPNESS.keys()))
+        raise ValueError(
+            f"Invalid action_type '{action_type}'. "
+            f"Valid action types are: {valid_types}"
+        )
+    
+    support_class = resolve_support_class(shooterdata, gun_data)
+    
+    # Validate support_class
+    if support_class not in SUPPORT_FACTORS:
+        valid_support = ", ".join(sorted(SUPPORT_FACTORS.keys()))
+        raise ValueError(
+            f"Invalid support_class '{support_class}'. "
+            f"Valid support classes are: {valid_support}"
+        )
+    
+    support_factor = SUPPORT_FACTORS[support_class]
+    stance_factor = STANCE_FACTORS[stance]
+    action_sharpness = ACTION_SHARPNESS[action_type]
+    strength = shooterdata["strength"]
+    skill = shooterdata.get("skill", 0)
+    
+    # Validate strength
+    if strength < 0:
+        raise ValueError(
+            f"Invalid strength '{strength}'. "
+            f"Strength must be non-negative."
+        )
+    
+    # Validate skill
+    if skill < 0:
+        raise ValueError(
+            f"Invalid skill '{skill}'. "
+            f"Skill must be non-negative."
+        )
+    
+    bore_offset = gun_data["bore_offset"]
+    ejecta_momentum = recoil_data["ejecta_momentum"]
+
+    control_factor = support_factor * stance_factor * (1 + strength * 0.08 + skill * 0.06)
+    aim_kick_rad = (ejecta_momentum * bore_offset * action_sharpness) / (system_mass_kg * control_factor)
+    aim_kick_qd = ((aim_kick_rad * 180) / math.pi) / 4
+    recovery_seconds = max(
+        0.05,
+        (ejecta_momentum * action_sharpness) / (support_factor * stance_factor * (1 + strength * 0.10 + skill * 0.08)),
+    )
+
+    return {
+        "support_class": support_class,
+        "control_factor": control_factor,
+        "action_sharpness": action_sharpness,
+        "aim_kick_rad": aim_kick_rad,
+        "aim_kick_qd": aim_kick_qd,
+        "recovery_seconds": recovery_seconds,
+    }
+
+
 def calculate_recoil(gun, used_ammo, configuration):
     """Returns recoil force in Joules"""
-    m_gun = gun.get("mass")
-    m_prj = used_ammo.get("bullet_mass")
-    m_prp = used_ammo.get("propellant_mass")
-    v_prj = used_ammo.get("v_muzzle")
-    barrel_difference = gun.get("barrel_length") - used_ammo.get("ref_barrel")
-    # print(f"Barrel difference: {barrel_difference} in")
-    delta_v = 0.333 * math.exp(0.00302 * v_prj) * barrel_difference
-    # print(f"Delta V: {delta_v} m/s")
-    actual_v_prj = v_prj + delta_v
-    if configuration == "full":
-        m_ammo = gun.get("mag_mass") + gun.get("capacity") * \
-            used_ammo.get("cartridge_mass")
-    else:
-        m_ammo = gun.get("mag_mass")
-    v_gas_factor = 1.5
-    if gun.get("type") == "rifle":
-        v_gas_factor = 1.75
-    # Long form (via firearm velocity calculation:)
-    # v_recoil = (m_prj * v_prj + m_prp * v_prj * v_gas_factor) /
-    #       (m_gun + m_ammo)
-    # E_recoil = 0.5 * (m_gun + m_ammo)/1000 * v_recoil**2
-    # Short form:
-    recoil_energy = 0.5 * (((m_prj * actual_v_prj + m_prp * actual_v_prj *
-                             v_gas_factor) / 1000)**2) / (m_gun + m_ammo) * \
-        1000
-    return (recoil_energy, v_prj, actual_v_prj)
+    result = calculate_free_recoil(gun, used_ammo, configuration)
+    return (
+        result["free_recoil_energy"],
+        result["nominal_velocity"],
+        result["actual_velocity"],
+    )
 
 
 def calculate_throwoff(shooter, gun, recoil_full, recoil_empty):
-    """Calculates (and prints the "throwoff" in radians/quarter degrees)"""
-    # Ek = 0.5 * m * v^2 = recoil energy
-    # Ek = (p^2)/2m
-    # Ek*2m = p^2
-    # p = math.sqrt(Ek*2m)
     shooterdata = SHOOTER[shooter]
-    h_shooter = shooterdata.get("height") / 1000  # m
-    m_shooter = shooterdata.get("weight") / 1000  # kg
-    s_shooter = shooterdata.get("strength")
-    h_shoulder = h_shooter * 4 / 5               # shoulder height
-    print(f"\n#### {shooter} ({h_shooter:.2f} m, {m_shooter:.2f} kg, "
-          f"STR: {s_shooter})")
-    # angular momentum is proportional to the moment of inertia and angular
-    # spead in radians/s
-    # L = Iω
-    # L = rmv
-    # the shooter is given a backwards rotation around the center of mass,
-    # located at shooter's height / 2
-    # where r = shooter's height / (4/5) (4 5ths being around shoulder height)
-    print(f"\n* Shoulder height: {h_shoulder:.2f} m")
-    # rifles have three point anchoring (two hands + shoulder)
-    if (gun.get("type") == "rifle" and not shooterdata.get("injured_hand")):
-        print("* Using rifle shooting stance")
-        stance_factor = 3
-    else:
-        print("* Using one-handed pistol shooting stance")
-        stance_factor = 1
+    h_shooter = shooterdata.get("height") / 1000
+    m_shooter = shooterdata.get("weight") / 1000
+    print(f"\n#### {shooter} ({h_shooter:.2f} m, {m_shooter:.2f} kg, STR: {shooterdata['strength']})")
 
-    for recoil in [recoil_full, recoil_empty]:
-        if recoil == recoil_full:
-            print("\n##### Full Magazine")
-        else:
-            print("\n##### Empty Magazine")
-        # (backwards) velocity given to the shooter:
-        v_shooter = recoil / m_shooter
-        # theoretically, it would be possible to place the pivot point
-        # at the centre of mass in the shooter, i.e
-        # shoulder height - shooter_height / 2, which would lessen the
-        # effect of angular momentum
-        orbital_angular_momentum = h_shoulder * m_shooter * v_shooter
-        print(f"\n* Shooter backwards velocity: {v_shooter:.2f} m/s")
-        print(f"* Shooter raw orbital angular momentum: "
-              f"{orbital_angular_momentum:.2f} rad/s")
-
-        # print("\nSkill vs. Throw-off (radians | quarter degrees):\n")
-        print("\n##### Throw-off, radians (quarter degrees)\n")
-        print("S = standing, C = crouching, P = prone, r = radians, ¼d = quarter degrees\n")
-        print("| Skill | S (r) | S (¼d) | C (r) | C (¼d) | P (r) | P (¼d) |")
-        print("|------:|------:|-------:|------:|-------:|------:|-------:|")
-
-        for skill in range(11):
-            skill_factor = skill * 0.1  # 10 represents full handling ability
-            handling_factor = 1 + (s_shooter * skill_factor * stance_factor)
-            # reaction time = 0.15 s for touch, we use this as a base
-            # scaling factor to compensate for recoil management
-            # this could theoretically be made worse being
-            # dazed/injured/drugged/confused/less intelligent/dexterious
-            throwoff = (orbital_angular_momentum / handling_factor) * 0.15
-            throwoff_qd = ((throwoff*180)/math.pi)/4
-            throwoff_c = throwoff / 2
-            throwoff_c_qd = ((throwoff_c*180)/math.pi)/4
-            throwoff_p = throwoff / 5
-            throwoff_p_qd = ((throwoff_p*180)/math.pi)/4
-            print(f"| {skill} | {throwoff:.4f} | {throwoff_qd:.0f} "
-                  f"| {throwoff_c:.4f} | {throwoff_c_qd:.0f} "
-                  f"| {throwoff_p:.4f} | {throwoff_p_qd:.0f} |")
+    for label, recoil_data in [("Full Magazine", recoil_full), ("Empty Magazine", recoil_empty)]:
+        print(f"\n##### {label}\n")
+        print("| Stance | Aim kick (rad) | Aim kick (¼d) | Recovery (s) | Support |")
+        print("|-------:|---------------:|--------------:|-------------:|--------:|")
+        for stance in ("standing", "crouching", "prone"):
+            disturbance = calculate_disturbance(shooterdata, gun, recoil_data, stance)
+            print(
+                f"| {stance} | {disturbance['aim_kick_rad']:.4f} | "
+                f"{disturbance['aim_kick_qd']:.1f} | {disturbance['recovery_seconds']:.2f} | "
+                f"{disturbance['support_class']} |"
+            )
 
 
 def show_recoil(gun, used_ammo):
-    """Shows recoil energy of a gun/used_ammo combination"""
-    print(f"## {gun['name']}: {used_ammo['name']} ({gun['barrel_length']}\""
-          f" barrel, {gun['capacity']} rd. mag)")
-    (recoil_full, v_p, v_a) = calculate_recoil(gun, used_ammo, "full")
-    prp_prj_ratio = used_ammo.get("propellant_mass") / \
-        used_ammo.get("bullet_mass")
-    print(f"* Nominal Muzzle Velocity: {v_p:.1f} m/s")
-    print(f"* Actual Muzzle Velocity: {v_a:.1f} m/s")
-    e_bullet = 0.5 * (used_ammo.get("bullet_mass") / 1000) * v_p**2
+    print(f"## {gun['name']}: {used_ammo['name']} ({gun['barrel_length']}\" barrel, {gun['capacity']} rd. mag)")
+    recoil_full = calculate_free_recoil(gun, used_ammo, "full")
+    recoil_empty = calculate_free_recoil(gun, used_ammo, "empty")
+    prp_prj_ratio = used_ammo["propellant_mass"] / used_ammo["bullet_mass"]
+    e_bullet = 0.5 * (used_ammo["bullet_mass"] / 1000) * recoil_full["nominal_velocity"] ** 2
     damage = int(math.sqrt(e_bullet))
+    print(f"* Nominal Muzzle Velocity: {recoil_full['nominal_velocity']:.1f} m/s")
+    print(f"* Actual Muzzle Velocity: {recoil_full['actual_velocity']:.1f} m/s")
     print(f"* Bullet Energy: {e_bullet:.1f} J, Damage Potential: {damage}")
     print(f"* Propellant to bullet ratio: {prp_prj_ratio:.2f}")
-    print("\n### Recoil Energy to Shooter")
-    print(f" - Fully loaded: {recoil_full:.2f} J")
-    (recoil_empty, v_p, v_a) = calculate_recoil(gun, used_ammo, "empty")
-    print(f" - Last shot: {recoil_empty:.2f} J")
-    print("\n### Throwoff")
+    print("\n### Recoil Physics")
+    print(f" - Fully loaded free recoil: {recoil_full['free_recoil_energy']:.2f} J")
+    print(f" - Last-shot free recoil: {recoil_empty['free_recoil_energy']:.2f} J")
+    print(f" - Fully loaded ejecta momentum: {recoil_full['ejecta_momentum']:.2f} kg m/s")
+    print(f" - Last-shot ejecta momentum: {recoil_empty['ejecta_momentum']:.2f} kg m/s")
+    print("\n### Shooter Disturbance")
     for shooter in SHOOTER:
         calculate_throwoff(shooter, gun, recoil_full, recoil_empty)
     print("\n")
