@@ -26,34 +26,68 @@ def load_data():
         SHOOTER = json.load(fp)
 
 
+ACTION_GAS_FACTORS = {
+    "bolt": 1.50,
+    "revolver": 1.55,
+    "locked_breech": 1.50,
+    "direct_blowback": 1.60,
+    "roller_delayed": 1.55,
+    "gas": 1.75,
+}
+
+TYPE_DEFAULTS = {
+    "pistol": {"action_type": "locked_breech", "support_class": "two_hand", "bore_offset": 0.05},
+    "submachinegun": {"action_type": "direct_blowback", "support_class": "stocked", "bore_offset": 0.04},
+    "rifle": {"action_type": "gas", "support_class": "stocked", "bore_offset": 0.06},
+}
+
+
+def get_gun_defaults(gun):
+    defaults = TYPE_DEFAULTS.get(gun.get("type"), TYPE_DEFAULTS["pistol"]).copy()
+    defaults.update(gun)
+    return defaults
+
+
+def calculate_free_recoil(gun, used_ammo, configuration):
+    gun_data = get_gun_defaults(gun)
+    m_gun = gun_data["mass"]
+    m_prj = used_ammo["bullet_mass"]
+    m_prp = used_ammo["propellant_mass"]
+    v_nominal = used_ammo["v_muzzle"]
+    barrel_difference = gun_data["barrel_length"] - used_ammo["ref_barrel"]
+    delta_v = 0.333 * math.exp(0.00302 * v_nominal) * barrel_difference
+    actual_v = v_nominal + delta_v
+
+    if configuration == "full":
+        ammo_mass = gun_data["mag_mass"] + gun_data["capacity"] * used_ammo["cartridge_mass"]
+    else:
+        ammo_mass = gun_data["mag_mass"]
+
+    system_mass_kg = (m_gun + ammo_mass) / 1000
+    gas_factor = ACTION_GAS_FACTORS[gun_data["action_type"]]
+    ejecta_momentum = ((m_prj * actual_v) + (m_prp * actual_v * gas_factor)) / 1000
+    recoil_velocity = ejecta_momentum / system_mass_kg
+    free_recoil_energy = ejecta_momentum ** 2 / (2 * system_mass_kg)
+
+    return {
+        "nominal_velocity": v_nominal,
+        "actual_velocity": actual_v,
+        "system_mass_kg": system_mass_kg,
+        "gas_factor": gas_factor,
+        "ejecta_momentum": ejecta_momentum,
+        "recoil_velocity": recoil_velocity,
+        "free_recoil_energy": free_recoil_energy,
+    }
+
+
 def calculate_recoil(gun, used_ammo, configuration):
     """Returns recoil force in Joules"""
-    m_gun = gun.get("mass")
-    m_prj = used_ammo.get("bullet_mass")
-    m_prp = used_ammo.get("propellant_mass")
-    v_prj = used_ammo.get("v_muzzle")
-    barrel_difference = gun.get("barrel_length") - used_ammo.get("ref_barrel")
-    # print(f"Barrel difference: {barrel_difference} in")
-    delta_v = 0.333 * math.exp(0.00302 * v_prj) * barrel_difference
-    # print(f"Delta V: {delta_v} m/s")
-    actual_v_prj = v_prj + delta_v
-    if configuration == "full":
-        m_ammo = gun.get("mag_mass") + gun.get("capacity") * \
-            used_ammo.get("cartridge_mass")
-    else:
-        m_ammo = gun.get("mag_mass")
-    v_gas_factor = 1.5
-    if gun.get("type") == "rifle":
-        v_gas_factor = 1.75
-    # Long form (via firearm velocity calculation:)
-    # v_recoil = (m_prj * v_prj + m_prp * v_prj * v_gas_factor) /
-    #       (m_gun + m_ammo)
-    # E_recoil = 0.5 * (m_gun + m_ammo)/1000 * v_recoil**2
-    # Short form:
-    recoil_energy = 0.5 * (((m_prj * actual_v_prj + m_prp * actual_v_prj *
-                             v_gas_factor) / 1000)**2) / (m_gun + m_ammo) * \
-        1000
-    return (recoil_energy, v_prj, actual_v_prj)
+    result = calculate_free_recoil(gun, used_ammo, configuration)
+    return (
+        result["free_recoil_energy"],
+        result["nominal_velocity"],
+        result["actual_velocity"],
+    )
 
 
 def calculate_throwoff(shooter, gun, recoil_full, recoil_empty):
