@@ -64,7 +64,14 @@ def calculate_free_recoil(gun, used_ammo, configuration):
         ammo_mass = gun_data["mag_mass"]
 
     system_mass_kg = (m_gun + ammo_mass) / 1000
-    gas_factor = ACTION_GAS_FACTORS[gun_data["action_type"]]
+    action_type = gun_data["action_type"]
+    if action_type not in ACTION_GAS_FACTORS:
+        valid_types = ", ".join(sorted(ACTION_GAS_FACTORS.keys()))
+        raise ValueError(
+            f"Invalid action_type '{action_type}'. "
+            f"Valid action types are: {valid_types}"
+        )
+    gas_factor = ACTION_GAS_FACTORS[action_type]
     ejecta_momentum = ((m_prj * actual_v) + (m_prp * actual_v * gas_factor)) / 1000
     recoil_velocity = ejecta_momentum / system_mass_kg
     free_recoil_energy = ejecta_momentum ** 2 / (2 * system_mass_kg)

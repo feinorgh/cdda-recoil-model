@@ -23,3 +23,12 @@ class TestFreeRecoil(unittest.TestCase):
         full_mag = recoil.calculate_free_recoil(gun, ammo, "full")
         empty_mag = recoil.calculate_free_recoil(gun, ammo, "empty")
         self.assertLess(full_mag["free_recoil_energy"], empty_mag["free_recoil_energy"])
+
+    def test_invalid_action_type_raises_clear_error(self):
+        gun = recoil.WEAPONS["9x19mm Parabellum"][0].copy()
+        gun["action_type"] = "invalid_action"
+        ammo = recoil.AMMO["9x19mm Parabellum"][0]
+        with self.assertRaises(ValueError) as context:
+            recoil.calculate_free_recoil(gun, ammo, "full")
+        self.assertIn("action_type", str(context.exception))
+        self.assertIn("invalid_action", str(context.exception))
