@@ -123,14 +123,39 @@ def resolve_support_class(shooterdata, gun_data):
 
 def calculate_disturbance(shooterdata, gun, recoil_data, stance):
     gun_data = get_gun_defaults(gun)
+    
+    # Validate stance
+    if stance not in STANCE_FACTORS:
+        valid_stances = ", ".join(sorted(STANCE_FACTORS.keys()))
+        raise ValueError(
+            f"Invalid stance '{stance}'. "
+            f"Valid stances are: {valid_stances}"
+        )
+    
+    # Validate system_mass_kg
+    system_mass_kg = recoil_data["system_mass_kg"]
+    if system_mass_kg <= 0:
+        raise ValueError(
+            f"Invalid system_mass_kg '{system_mass_kg}'. "
+            f"System mass must be positive."
+        )
+    
     support_class = resolve_support_class(shooterdata, gun_data)
+    
+    # Validate support_class
+    if support_class not in SUPPORT_FACTORS:
+        valid_support = ", ".join(sorted(SUPPORT_FACTORS.keys()))
+        raise ValueError(
+            f"Invalid support_class '{support_class}'. "
+            f"Valid support classes are: {valid_support}"
+        )
+    
     support_factor = SUPPORT_FACTORS[support_class]
     stance_factor = STANCE_FACTORS[stance]
     action_sharpness = ACTION_SHARPNESS[gun_data["action_type"]]
     strength = shooterdata["strength"]
     skill = shooterdata.get("skill", 0)
     bore_offset = gun_data["bore_offset"]
-    system_mass_kg = recoil_data["system_mass_kg"]
     ejecta_momentum = recoil_data["ejecta_momentum"]
 
     control_factor = support_factor * stance_factor * (1 + strength * 0.08 + skill * 0.06)

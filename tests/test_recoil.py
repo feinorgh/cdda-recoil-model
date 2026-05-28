@@ -78,3 +78,37 @@ class TestDisturbanceModel(unittest.TestCase):
         novice_result = recoil.calculate_disturbance(novice, gun, self.recoil_data, "standing")
         expert_result = recoil.calculate_disturbance(expert, gun, self.recoil_data, "standing")
         self.assertLess(expert_result["recovery_seconds"], novice_result["recovery_seconds"])
+
+    def test_injured_hand_forces_one_hand_support(self):
+        injured_shooter = dict(self.shooter, injured_hand=True)
+        rifle = {"type": "rifle", "support_class": "stocked", "bore_offset": 0.06, "action_type": "gas"}
+        result = recoil.calculate_disturbance(injured_shooter, rifle, self.recoil_data, "standing")
+        self.assertEqual(result["support_class"], "one_hand")
+
+    def test_invalid_stance_raises_clear_error(self):
+        gun = {"type": "pistol", "support_class": "two_hand", "bore_offset": 0.05, "action_type": "locked_breech"}
+        with self.assertRaises(ValueError) as context:
+            recoil.calculate_disturbance(self.shooter, gun, self.recoil_data, "invalid_stance")
+        self.assertIn("stance", str(context.exception).lower())
+        self.assertIn("invalid_stance", str(context.exception))
+
+    def test_invalid_support_class_raises_clear_error(self):
+        gun = {"type": "pistol", "support_class": "invalid_support", "bore_offset": 0.05, "action_type": "locked_breech"}
+        with self.assertRaises(ValueError) as context:
+            recoil.calculate_disturbance(self.shooter, gun, self.recoil_data, "standing")
+        self.assertIn("support_class", str(context.exception).lower())
+        self.assertIn("invalid_support", str(context.exception))
+
+    def test_zero_system_mass_raises_clear_error(self):
+        gun = {"type": "pistol", "support_class": "two_hand", "bore_offset": 0.05, "action_type": "locked_breech"}
+        bad_recoil_data = dict(self.recoil_data, system_mass_kg=0.0)
+        with self.assertRaises(ValueError) as context:
+            recoil.calculate_disturbance(self.shooter, gun, bad_recoil_data, "standing")
+        self.assertIn("system_mass_kg", str(context.exception))
+
+    def test_negative_system_mass_raises_clear_error(self):
+        gun = {"type": "pistol", "support_class": "two_hand", "bore_offset": 0.05, "action_type": "locked_breech"}
+        bad_recoil_data = dict(self.recoil_data, system_mass_kg=-1.0)
+        with self.assertRaises(ValueError) as context:
+            recoil.calculate_disturbance(self.shooter, gun, bad_recoil_data, "standing")
+        self.assertIn("system_mass_kg", str(context.exception))
