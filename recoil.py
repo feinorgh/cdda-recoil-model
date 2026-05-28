@@ -58,6 +58,12 @@ def calculate_free_recoil(gun, used_ammo, configuration):
     delta_v = 0.333 * math.exp(0.00302 * v_nominal) * barrel_difference
     actual_v = v_nominal + delta_v
 
+    if configuration not in ("full", "empty"):
+        raise ValueError(
+            f"Invalid configuration '{configuration}'. "
+            f"Valid configurations are: empty, full"
+        )
+
     if configuration == "full":
         ammo_mass = gun_data["mag_mass"] + gun_data["capacity"] * used_ammo["cartridge_mass"]
     else:
