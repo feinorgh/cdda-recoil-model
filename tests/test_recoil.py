@@ -1,5 +1,7 @@
 import math
 import unittest
+from io import StringIO
+from contextlib import redirect_stdout
 
 import recoil
 
@@ -133,3 +135,20 @@ class TestDisturbanceModel(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             recoil.calculate_disturbance(bad_shooter, gun, self.recoil_data, "standing")
         self.assertIn("skill", str(context.exception).lower())
+
+
+class TestReportOutput(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        recoil.load_data()
+
+    def test_show_recoil_prints_new_sections(self):
+        gun = recoil.WEAPONS["9x19mm Parabellum"][0]
+        ammo = recoil.AMMO["9x19mm Parabellum"][0]
+        buffer = StringIO()
+        with redirect_stdout(buffer):
+            recoil.show_recoil(gun, ammo)
+        output = buffer.getvalue()
+        self.assertIn("### Recoil Physics", output)
+        self.assertIn("### Shooter Disturbance", output)
+        self.assertIn("Recovery (s)", output)
