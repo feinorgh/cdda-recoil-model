@@ -140,6 +140,15 @@ def calculate_disturbance(shooterdata, gun, recoil_data, stance):
             f"System mass must be positive."
         )
     
+    # Validate action_type
+    action_type = gun_data["action_type"]
+    if action_type not in ACTION_SHARPNESS:
+        valid_types = ", ".join(sorted(ACTION_SHARPNESS.keys()))
+        raise ValueError(
+            f"Invalid action_type '{action_type}'. "
+            f"Valid action types are: {valid_types}"
+        )
+    
     support_class = resolve_support_class(shooterdata, gun_data)
     
     # Validate support_class
@@ -152,7 +161,7 @@ def calculate_disturbance(shooterdata, gun, recoil_data, stance):
     
     support_factor = SUPPORT_FACTORS[support_class]
     stance_factor = STANCE_FACTORS[stance]
-    action_sharpness = ACTION_SHARPNESS[gun_data["action_type"]]
+    action_sharpness = ACTION_SHARPNESS[action_type]
     strength = shooterdata["strength"]
     skill = shooterdata.get("skill", 0)
     bore_offset = gun_data["bore_offset"]

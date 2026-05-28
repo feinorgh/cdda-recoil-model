@@ -112,3 +112,10 @@ class TestDisturbanceModel(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             recoil.calculate_disturbance(self.shooter, gun, bad_recoil_data, "standing")
         self.assertIn("system_mass_kg", str(context.exception))
+
+    def test_invalid_action_type_raises_clear_error(self):
+        gun = {"type": "pistol", "support_class": "two_hand", "bore_offset": 0.05, "action_type": "invalid_action"}
+        with self.assertRaises(ValueError) as context:
+            recoil.calculate_disturbance(self.shooter, gun, self.recoil_data, "standing")
+        self.assertIn("action_type", str(context.exception).lower())
+        self.assertIn("invalid_action", str(context.exception))
