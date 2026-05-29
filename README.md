@@ -24,6 +24,23 @@ See [recoil.py](recoil.py) for details and implementation comments.
 There is an [example](EXAMPLE.md) output showing the generated report for the
 experimental model.
 
+### Target Practice Renderer
+
+A companion prototype simulates strings of shots using the recoil model and
+renders authentic SVG targets (paper bullseye, IPSC silhouette, and IPSC
+popper), so the effects of recoil, shooter skill, weapon, ammunition, and
+firing cadence can be compared against real shooting formats (slow, timed, and
+rapid fire; popper speed strings).
+
+Run it with:
+
+```bash
+python3 practice.py
+```
+
+This reads `scenarios.json`, writes one SVG per scenario into `targets/`, and
+generates `targets/TARGETS.md` — a gallery of the rendered targets.
+
 The physical concept of recoil is based on the idea of conservation
 of momentum. https://en.wikipedia.org/wiki/Momentum
 
