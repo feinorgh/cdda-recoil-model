@@ -96,3 +96,55 @@ class TestIpscSvg(unittest.TestCase):
         self.assertEqual(svg.count('class="zone"'), len(self.target_def["zones"]))
         self.assertEqual(svg.count('class="shot"'), len(self.shots))
         self.assertIn("5.00", svg)  # hit factor formatted
+
+
+class TestOverlaySvg(unittest.TestCase):
+    def setUp(self):
+        self.target_def = targets.TARGET_DEFS["bullseye"]
+
+        def mk(total):
+            return {
+                "target": "bullseye", "total_score": total, "x_count": 0,
+                "group_size_cm": 3.0, "mpi_x_cm": 0.0, "mpi_y_cm": 0.0,
+                "per_shot": [], "vertical_walk_cm": 1.0,
+            }
+
+        self.series = [
+            {"label": "standing", "color": "#c0392b",
+             "shots": [{"x_cm": 0.0, "y_cm": 0.0, "shot_index": 0, "time_s": 0.0}],
+             "score": mk(10)},
+            {"label": "crouching", "color": "#2471a3",
+             "shots": [
+                 {"x_cm": 1.0, "y_cm": 1.0, "shot_index": 0, "time_s": 0.0},
+                 {"x_cm": 2.0, "y_cm": -1.0, "shot_index": 1, "time_s": 1.0},
+             ],
+             "score": mk(18)},
+            {"label": "prone", "color": "#1e8449",
+             "shots": [{"x_cm": 0.0, "y_cm": 0.5, "shot_index": 0, "time_s": 0.0}],
+             "score": mk(20)},
+        ]
+        self.run_meta = {
+            "gun": "Glock 17", "ammo": "FMJ", "shooter": "Commando Cassie",
+            "range_m": 25, "shot_count": 5, "time_limit_s": 5.0,
+        }
+
+    def test_well_formed_svg(self):
+        svg = targets.render_overlay_svg(self.target_def, self.series, self.run_meta)
+        self.assertTrue(svg.lstrip().startswith("<svg"))
+        self.assertIn("</svg>", svg)
+
+    def test_three_stance_colors_present(self):
+        svg = targets.render_overlay_svg(self.target_def, self.series, self.run_meta)
+        for color in ("#c0392b", "#2471a3", "#1e8449"):
+            self.assertIn(color, svg)
+
+    def test_all_shot_markers_drawn(self):
+        svg = targets.render_overlay_svg(self.target_def, self.series, self.run_meta)
+        total = sum(len(s["shots"]) for s in self.series)
+        self.assertEqual(svg.count('class="shot"'), total)
+
+    def test_legend_has_labels_and_range(self):
+        svg = targets.render_overlay_svg(self.target_def, self.series, self.run_meta)
+        for label in ("standing", "crouching", "prone"):
+            self.assertIn(label, svg)
+        self.assertIn("25 m", svg)

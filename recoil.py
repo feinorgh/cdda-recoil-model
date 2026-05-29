@@ -248,6 +248,27 @@ def show_recoil(gun, used_ammo):
     print("\n### Shooter Disturbance")
     for shooter in SHOOTER:
         calculate_throwoff(shooter, gun, recoil_full, recoil_empty)
+    # 5-shot stance comparison illustration (rendered by examples.py).
+    import examples
+    cassie = SHOOTER.get(examples.EXAMPLE_SHOOTER)
+    if cassie is None:
+        print(
+            f"WARNING: shooter '{examples.EXAMPLE_SHOOTER}' not found; "
+            f"skipping stance comparison for {gun['name']}",
+            file=sys.stderr,
+        )
+    else:
+        link = examples.render_example_overlay(
+            gun, used_ammo, cassie, examples.EXAMPLE_SHOOTER
+        )
+        print(
+            f"\n### 5-Shot Stance Comparison "
+            f"({examples.EXAMPLE_SHOOTER}, {examples.EXAMPLE_RANGE_M} m)\n"
+        )
+        print(
+            f"![5-shot stance comparison for {gun['name']} with "
+            f"{used_ammo['name']} at {examples.EXAMPLE_RANGE_M} m]({link})\n"
+        )
     print("\n")
 
 

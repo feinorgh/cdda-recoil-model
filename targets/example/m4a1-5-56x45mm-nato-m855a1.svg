@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+<rect x="20" y="20" width="360" height="360" fill="#f4f1e8" stroke="#999999"/>
+<circle cx="200.0" cy="200.0" r="163.6" fill="none" stroke="#222222" stroke-width="0.8"/>
+<circle cx="200.0" cy="200.0" r="147.3" fill="none" stroke="#222222" stroke-width="0.8"/>
+<circle cx="200.0" cy="200.0" r="130.9" fill="none" stroke="#222222" stroke-width="0.8"/>
+<circle cx="200.0" cy="200.0" r="114.5" fill="none" stroke="#222222" stroke-width="0.8"/>
+<circle cx="200.0" cy="200.0" r="98.2" fill="none" stroke="#222222" stroke-width="0.8"/>
+<circle cx="200.0" cy="200.0" r="81.8" fill="none" stroke="#222222" stroke-width="0.8"/>
+<circle cx="200.0" cy="200.0" r="65.5" fill="#111111" stroke="#ffffff" stroke-width="0.8"/>
+<circle cx="200.0" cy="200.0" r="49.1" fill="#111111" stroke="#ffffff" stroke-width="0.8"/>
+<circle cx="200.0" cy="200.0" r="32.7" fill="#111111" stroke="#ffffff" stroke-width="0.8"/>
+<circle cx="200.0" cy="200.0" r="16.4" fill="#111111" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="183.8" cy="225.0" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="180.8" cy="39.1" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="182.9" cy="-3.6" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="183.5" cy="-32.8" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="193.8" cy="-28.7" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="184.9" cy="223.2" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="182.1" cy="139.2" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="184.1" cy="136.5" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="184.6" cy="122.2" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="194.3" cy="130.4" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="186.2" cy="221.2" r="4" fill="#1e8449" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="183.7" cy="214.2" r="4" fill="#1e8449" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="185.5" cy="222.5" r="4" fill="#1e8449" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="185.9" cy="211.3" r="4" fill="#1e8449" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="194.7" cy="219.4" r="4" fill="#1e8449" stroke="#ffffff" stroke-width="0.8"/>
+<line x1="392" y1="20" x2="392" y2="380" stroke="#dddddd"/>
+<text x="400" y="38" font-family="sans-serif" font-size="12" fill="#333333">Gun: <tspan font-weight="bold">M4A1</tspan></text>
+<text x="400" y="58" font-family="sans-serif" font-size="12" fill="#333333">Ammo: <tspan font-weight="bold">5.56x45mm NATO M855A1</tspan></text>
+<text x="400" y="78" font-family="sans-serif" font-size="12" fill="#333333">Shooter: <tspan font-weight="bold">Commando Cassie</tspan></text>
+<text x="400" y="98" font-family="sans-serif" font-size="12" fill="#333333">Range: <tspan font-weight="bold">25 m</tspan></text>
+<text x="400" y="118" font-family="sans-serif" font-size="12" fill="#333333">String: <tspan font-weight="bold">5 rds / 5.0 s</tspan></text>
+<text x="400" y="148" font-family="sans-serif" font-size="12" font-weight="bold" fill="#333333">Stance comparison</text>
+<rect x="400" y="160" width="11" height="11" fill="#c0392b" stroke="#ffffff" stroke-width="0.5"/>
+<text x="418" y="170" font-family="sans-serif" font-size="12" fill="#333333">standing: 39.4 cm, 10 (0X)</text>
+<text x="418" y="188" font-family="sans-serif" font-size="10" fill="#777777">walk 38.8 cm</text>
+<rect x="400" y="196" width="11" height="11" fill="#2471a3" stroke="#ffffff" stroke-width="0.5"/>
+<text x="418" y="206" font-family="sans-serif" font-size="12" fill="#333333">crouching: 15.4 cm, 35 (0X)</text>
+<text x="418" y="224" font-family="sans-serif" font-size="10" fill="#777777">walk 14.2 cm</text>
+<rect x="400" y="232" width="11" height="11" fill="#1e8449" stroke="#ffffff" stroke-width="0.5"/>
+<text x="418" y="242" font-family="sans-serif" font-size="12" fill="#333333">prone: 1.9 cm, 45 (0X)</text>
+<text x="418" y="260" font-family="sans-serif" font-size="10" fill="#777777">walk 0.3 cm</text>
+</svg>

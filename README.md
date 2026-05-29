@@ -41,6 +41,11 @@ python3 practice.py
 This reads `scenarios.json`, writes one SVG per scenario into `targets/`, and
 generates `targets/TARGETS.md` — a gallery of the rendered targets.
 
+[`EXAMPLE.md`](EXAMPLE.md) additionally embeds, per weapon/ammo example, a
+5-shot stance-comparison target: Commando Cassie firing five rounds at 25 m in
+the standing, crouching, and prone stances, color-coded on one bullseye. These
+SVGs are generated into `targets/example/` by `python3 recoil.py`.
+
 The physical concept of recoil is based on the idea of conservation
 of momentum. https://en.wikipedia.org/wiki/Momentum
 

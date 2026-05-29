@@ -153,6 +153,11 @@
 | crouching | 0.1018 | 1.5 | 1.98 | one_hand |
 | prone | 0.0788 | 1.1 | 1.53 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for Beretta M9A1 with 9x19mm 115 gr Federal FMJ at 25 m](targets/example/beretta-m9a1-9x19mm-115-gr-federal-fmj.svg)
+
+
 
 ## Beretta M9A1: 9x19mm 124 gr Underwood FMJ +P (4.9" barrel, 15 rd. mag)
 * Nominal Muzzle Velocity: 373.0 m/s
@@ -239,6 +244,11 @@
 | standing | 0.1369 | 2.0 | 2.66 | one_hand |
 | crouching | 0.1140 | 1.6 | 2.22 | one_hand |
 | prone | 0.0883 | 1.3 | 1.72 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for Beretta M9A1 with 9x19mm 124 gr Underwood FMJ +P at 25 m](targets/example/beretta-m9a1-9x19mm-124-gr-underwood-fmj-p.svg)
+
 
 
 ## Glock 19M: 9x19mm 115 gr Federal FMJ (4.02" barrel, 15 rd. mag)
@@ -327,6 +337,11 @@
 | crouching | 0.1629 | 2.3 | 1.98 | one_hand |
 | prone | 0.1261 | 1.8 | 1.53 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for Glock 19M with 9x19mm 115 gr Federal FMJ at 25 m](targets/example/glock-19m-9x19mm-115-gr-federal-fmj.svg)
+
+
 
 ## Glock 19M: 9x19mm 124 gr Underwood FMJ +P (4.02" barrel, 15 rd. mag)
 * Nominal Muzzle Velocity: 373.0 m/s
@@ -413,6 +428,11 @@
 | standing | 0.2188 | 3.1 | 2.66 | one_hand |
 | crouching | 0.1824 | 2.6 | 2.21 | one_hand |
 | prone | 0.1412 | 2.0 | 1.71 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for Glock 19M with 9x19mm 124 gr Underwood FMJ +P at 25 m](targets/example/glock-19m-9x19mm-124-gr-underwood-fmj-p.svg)
+
 
 
 ## Glock 17: 9x19mm 115 gr Federal FMJ (4.49" barrel, 17 rd. mag)
@@ -501,6 +521,11 @@
 | crouching | 0.1550 | 2.2 | 1.98 | one_hand |
 | prone | 0.1200 | 1.7 | 1.53 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for Glock 17 with 9x19mm 115 gr Federal FMJ at 25 m](targets/example/glock-17-9x19mm-115-gr-federal-fmj.svg)
+
+
 
 ## Glock 17: 9x19mm 124 gr Underwood FMJ +P (4.49" barrel, 17 rd. mag)
 * Nominal Muzzle Velocity: 373.0 m/s
@@ -587,6 +612,11 @@
 | standing | 0.2083 | 3.0 | 2.66 | one_hand |
 | crouching | 0.1735 | 2.5 | 2.22 | one_hand |
 | prone | 0.1344 | 1.9 | 1.72 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for Glock 17 with 9x19mm 124 gr Underwood FMJ +P at 25 m](targets/example/glock-17-9x19mm-124-gr-underwood-fmj-p.svg)
+
 
 
 ## MP5-N: 9x19mm 115 gr Federal FMJ (8.9" barrel, 30 rd. mag)
@@ -675,6 +705,11 @@
 | crouching | 0.0335 | 0.5 | 2.31 | one_hand |
 | prone | 0.0259 | 0.4 | 1.79 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for MP5-N with 9x19mm 115 gr Federal FMJ at 25 m](targets/example/mp5-n-9x19mm-115-gr-federal-fmj.svg)
+
+
 
 ## MP5-N: 9x19mm 124 gr Underwood FMJ +P (8.9" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 373.0 m/s
@@ -761,6 +796,11 @@
 | standing | 0.0450 | 0.6 | 3.11 | one_hand |
 | crouching | 0.0375 | 0.5 | 2.59 | one_hand |
 | prone | 0.0290 | 0.4 | 2.00 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for MP5-N with 9x19mm 124 gr Underwood FMJ +P at 25 m](targets/example/mp5-n-9x19mm-124-gr-underwood-fmj-p.svg)
+
 
 
 # 5.56x45mm NATO:
@@ -850,6 +890,11 @@
 | crouching | 0.0853 | 1.2 | 3.85 | one_hand |
 | prone | 0.0660 | 0.9 | 2.98 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for M4A1 with 5.56x45mm NATO M855A1 at 25 m](targets/example/m4a1-5-56x45mm-nato-m855a1.svg)
+
+
 
 ## M4A1: .223 Remington 36gr JHP (14.5" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 1140.0 m/s
@@ -936,6 +981,11 @@
 | standing | 0.0905 | 1.3 | 4.09 | one_hand |
 | crouching | 0.0754 | 1.1 | 3.41 | one_hand |
 | prone | 0.0584 | 0.8 | 2.64 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for M4A1 with .223 Remington 36gr JHP at 25 m](targets/example/m4a1-223-remington-36gr-jhp.svg)
+
 
 
 ## M27 IAR: 5.56x45mm NATO M855A1 (16.5" barrel, 30 rd. mag)
@@ -1024,6 +1074,11 @@
 | crouching | 0.0678 | 1.0 | 3.90 | one_hand |
 | prone | 0.0525 | 0.8 | 3.02 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for M27 IAR with 5.56x45mm NATO M855A1 at 25 m](targets/example/m27-iar-5-56x45mm-nato-m855a1.svg)
+
+
 
 ## M27 IAR: .223 Remington 36gr JHP (16.5" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 1140.0 m/s
@@ -1110,6 +1165,11 @@
 | standing | 0.0725 | 1.0 | 4.17 | one_hand |
 | crouching | 0.0604 | 0.9 | 3.47 | one_hand |
 | prone | 0.0467 | 0.7 | 2.69 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for M27 IAR with .223 Remington 36gr JHP at 25 m](targets/example/m27-iar-223-remington-36gr-jhp.svg)
+
 
 
 ## HK 416 D20RS: 5.56x45mm NATO M855A1 (20" barrel, 30 rd. mag)
@@ -1198,6 +1258,11 @@
 | crouching | 0.0667 | 1.0 | 3.99 | one_hand |
 | prone | 0.0516 | 0.7 | 3.09 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for HK 416 D20RS with 5.56x45mm NATO M855A1 at 25 m](targets/example/hk-416-d20rs-5-56x45mm-nato-m855a1.svg)
+
+
 
 ## HK 416 D20RS: .223 Remington 36gr JHP (20" barrel, 30 rd. mag)
 * Nominal Muzzle Velocity: 1140.0 m/s
@@ -1284,6 +1349,11 @@
 | standing | 0.0720 | 1.0 | 4.31 | one_hand |
 | crouching | 0.0600 | 0.9 | 3.59 | one_hand |
 | prone | 0.0465 | 0.7 | 2.78 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for HK 416 D20RS with .223 Remington 36gr JHP at 25 m](targets/example/hk-416-d20rs-223-remington-36gr-jhp.svg)
+
 
 
 # 7.62x51mm NATO:
@@ -1373,6 +1443,11 @@
 | crouching | 0.1242 | 1.8 | 7.04 | one_hand |
 | prone | 0.0961 | 1.4 | 5.45 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for FN MK 17 CQC with 7.62x51mm NATO M80 at 25 m](targets/example/fn-mk-17-cqc-7-62x51mm-nato-m80.svg)
+
+
 
 ## FN MK 17 CQC: 7.62x51mm NATO M80A1 (13" barrel, 20 rd. mag)
 * Nominal Muzzle Velocity: 931.2 m/s
@@ -1459,6 +1534,11 @@
 | standing | 0.1498 | 2.1 | 8.50 | one_hand |
 | crouching | 0.1248 | 1.8 | 7.08 | one_hand |
 | prone | 0.0966 | 1.4 | 5.48 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for FN MK 17 CQC with 7.62x51mm NATO M80A1 at 25 m](targets/example/fn-mk-17-cqc-7-62x51mm-nato-m80a1.svg)
+
 
 
 ## FN MK 17 CQC: 7.62x51mm NATO MK319 MOD 0 (13" barrel, 20 rd. mag)
@@ -1547,6 +1627,11 @@
 | crouching | 0.1206 | 1.7 | 6.84 | one_hand |
 | prone | 0.0934 | 1.3 | 5.29 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for FN MK 17 CQC with 7.62x51mm NATO MK319 MOD 0 at 25 m](targets/example/fn-mk-17-cqc-7-62x51mm-nato-mk319-mod-0.svg)
+
+
 
 ## M24: 7.62x51mm NATO M80 (24" barrel, 5 rd. mag)
 * Nominal Muzzle Velocity: 850.0 m/s
@@ -1633,6 +1718,11 @@
 | standing | 0.1098 | 1.6 | 8.95 | one_hand |
 | crouching | 0.0915 | 1.3 | 7.46 | one_hand |
 | prone | 0.0708 | 1.0 | 5.78 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for M24 with 7.62x51mm NATO M80 at 25 m](targets/example/m24-7-62x51mm-nato-m80.svg)
+
 
 
 ## M24: 7.62x51mm NATO M80A1 (24" barrel, 5 rd. mag)
@@ -1721,6 +1811,11 @@
 | crouching | 0.0928 | 1.3 | 7.57 | one_hand |
 | prone | 0.0719 | 1.0 | 5.86 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for M24 with 7.62x51mm NATO M80A1 at 25 m](targets/example/m24-7-62x51mm-nato-m80a1.svg)
+
+
 
 ## M24: 7.62x51mm NATO MK319 MOD 0 (24" barrel, 5 rd. mag)
 * Nominal Muzzle Velocity: 890.0 m/s
@@ -1807,6 +1902,11 @@
 | standing | 0.1071 | 1.5 | 8.73 | one_hand |
 | crouching | 0.0892 | 1.3 | 7.27 | one_hand |
 | prone | 0.0691 | 1.0 | 5.63 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for M24 with 7.62x51mm NATO MK319 MOD 0 at 25 m](targets/example/m24-7-62x51mm-nato-mk319-mod-0.svg)
+
 
 
 ## H&K G3: 7.62x51mm NATO M80 (17.7" barrel, 20 rd. mag)
@@ -1895,6 +1995,11 @@
 | crouching | 0.1059 | 1.5 | 7.22 | one_hand |
 | prone | 0.0820 | 1.2 | 5.59 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for H&K G3 with 7.62x51mm NATO M80 at 25 m](targets/example/h-k-g3-7-62x51mm-nato-m80.svg)
+
+
 
 ## H&K G3: 7.62x51mm NATO M80A1 (17.7" barrel, 20 rd. mag)
 * Nominal Muzzle Velocity: 931.2 m/s
@@ -1982,6 +2087,11 @@
 | crouching | 0.1069 | 1.5 | 7.29 | one_hand |
 | prone | 0.0828 | 1.2 | 5.64 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for H&K G3 with 7.62x51mm NATO M80A1 at 25 m](targets/example/h-k-g3-7-62x51mm-nato-m80a1.svg)
+
+
 
 ## H&K G3: 7.62x51mm NATO MK319 MOD 0 (17.7" barrel, 20 rd. mag)
 * Nominal Muzzle Velocity: 890.0 m/s
@@ -2068,6 +2178,11 @@
 | standing | 0.1237 | 1.8 | 8.43 | one_hand |
 | crouching | 0.1031 | 1.5 | 7.03 | one_hand |
 | prone | 0.0798 | 1.1 | 5.44 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for H&K G3 with 7.62x51mm NATO MK319 MOD 0 at 25 m](targets/example/h-k-g3-7-62x51mm-nato-mk319-mod-0.svg)
+
 
 
 # .40 S&W:
@@ -2157,6 +2272,11 @@
 | crouching | 0.2049 | 2.9 | 2.69 | one_hand |
 | prone | 0.1586 | 2.3 | 2.08 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for Glock 22 with .40 S&W 165 gr Federal FMJ at 25 m](targets/example/glock-22-40-s-w-165-gr-federal-fmj.svg)
+
+
 
 # 7x57mm:
 ## Mauser 1898: 7x57mm Spitzer (24" barrel, 5 rd. mag)
@@ -2245,6 +2365,11 @@
 | crouching | 0.1004 | 1.4 | 6.88 | one_hand |
 | prone | 0.0777 | 1.1 | 5.33 | one_hand |
 
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for Mauser 1898 with 7x57mm Spitzer at 25 m](targets/example/mauser-1898-7x57mm-spitzer.svg)
+
+
 
 # .50 BMG:
 ## M82A1: Cartridge, caliber .50, ball, M33 (29" barrel, 10 rd. mag)
@@ -2332,5 +2457,10 @@
 | standing | 0.1792 | 2.6 | 42.00 | one_hand |
 | crouching | 0.1494 | 2.1 | 35.00 | one_hand |
 | prone | 0.1156 | 1.7 | 27.10 | one_hand |
+
+### 5-Shot Stance Comparison (Commando Cassie, 25 m)
+
+![5-shot stance comparison for M82A1 with Cartridge, caliber .50, ball, M33 at 25 m](targets/example/m82a1-cartridge-caliber-50-ball-m33.svg)
+
 
 
