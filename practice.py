@@ -33,11 +33,15 @@ def resolve_records(scenario):
     if caliber not in recoil.AMMO:
         raise ValueError(f"Unknown caliber '{caliber}' in ammo.json")
 
-    gun = next((g for g in recoil.WEAPONS[caliber] if g["name"] == scenario["gun"]), None)
+    gun = next(
+        (g for g in recoil.WEAPONS[caliber] if g["name"] == scenario["gun"]), None
+    )
     if gun is None:
         raise ValueError(f"Unknown gun '{scenario['gun']}' for caliber '{caliber}'")
 
-    ammo = next((a for a in recoil.AMMO[caliber] if a["name"] == scenario["ammo"]), None)
+    ammo = next(
+        (a for a in recoil.AMMO[caliber] if a["name"] == scenario["ammo"]), None
+    )
     if ammo is None:
         raise ValueError(f"Unknown ammo '{scenario['ammo']}' for caliber '{caliber}'")
 
