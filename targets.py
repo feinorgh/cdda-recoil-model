@@ -172,6 +172,39 @@ def _render_popper(target_def, shots, score, run_meta):
     return "\n".join(parts)
 
 
+def _render_ipsc(target_def, shots, score, run_meta):
+    scale = _scale(target_def)
+    cx = _MARGIN_PX + _FACE_PX / 2.0
+    cy = _MARGIN_PX + _FACE_PX / 2.0
+    parts = [_svg_open()]
+    parts.append(
+        f'<rect x="{_MARGIN_PX}" y="{_MARGIN_PX}" width="{_FACE_PX}" '
+        f'height="{_FACE_PX}" fill="#d9c7a8" stroke="#7a6a4a"/>'
+    )
+    # Zones outer-first so inner zones draw on top.
+    for label, _points, hw, hh in reversed(target_def["zones"]):
+        parts.append(
+            f'<ellipse class="zone" cx="{cx:.1f}" cy="{cy:.1f}" '
+            f'rx="{hw * scale:.1f}" ry="{hh * scale:.1f}" '
+            f'fill="none" stroke="#5a4a2a" stroke-dasharray="4 3"/>'
+        )
+    parts.append(_shot_markers(shots, target_def))
+    zc = score["zone_counts"]
+    parts.append(_stats_panel([
+        ("Scenario", run_meta["scenario"]),
+        ("Gun", run_meta["gun"]),
+        ("Ammo", run_meta["ammo"]),
+        ("Shooter", run_meta["shooter"]),
+        ("Range", f'{run_meta["range_m"]} m'),
+        ("Points", score["total_points"]),
+        ("Zones", f'A{zc.get("A", 0)} C{zc.get("C", 0)} D{zc.get("D", 0)}'),
+        ("Misses", score["misses"]),
+        ("Hit factor", f'{score["hit_factor"]:.2f}'),
+    ]))
+    parts.append("</svg>")
+    return "\n".join(parts)
+
+
 def render_svg(target_def, shots, score, run_meta):
     """Render an authentic SVG target with shot markers and a stats panel."""
     target_type = target_def["type"]
@@ -179,6 +212,8 @@ def render_svg(target_def, shots, score, run_meta):
        return _render_bullseye(target_def, shots, score, run_meta)
     if target_type == "popper":
        return _render_popper(target_def, shots, score, run_meta)
+    if target_type == "ipsc_silhouette":
+        return _render_ipsc(target_def, shots, score, run_meta)
     raise ValueError(
        f"Invalid target type '{target_type}'. "
        f"Valid types are: bullseye, ipsc_silhouette, popper"

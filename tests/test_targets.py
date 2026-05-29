@@ -71,3 +71,28 @@ class TestPopperSvg(unittest.TestCase):
         }
         svg = targets.render_svg(self.target_def, self.shots, score, self.run_meta)
         self.assertNotIn("NEUTRALIZED", svg)
+
+
+class TestIpscSvg(unittest.TestCase):
+    def setUp(self):
+        self.target_def = targets.TARGET_DEFS["ipsc_silhouette"]
+        self.shots = [
+            {"x_cm": 0.0, "y_cm": 0.0, "shot_index": 0, "time_s": 0.0},
+            {"x_cm": 5.0, "y_cm": -5.0, "shot_index": 1, "time_s": 0.3},
+        ]
+        self.score = {
+            "target": "ipsc_silhouette", "total_points": 10,
+            "zone_counts": {"A": 2, "C": 0, "D": 0}, "misses": 0,
+            "hit_factor": 5.0, "group_size_cm": 7.1,
+        }
+        self.run_meta = {
+            "scenario": "IPSC", "gun": "Glock 17", "ammo": "FMJ",
+            "shooter": "Cassie", "range_m": 10, "shot_count": 2, "time_limit_s": 2,
+        }
+
+    def test_renders_zones_and_hit_factor(self):
+        svg = targets.render_svg(self.target_def, self.shots, self.score, self.run_meta)
+        self.assertTrue(svg.lstrip().startswith("<svg"))
+        self.assertEqual(svg.count('class="zone"'), len(self.target_def["zones"]))
+        self.assertEqual(svg.count('class="shot"'), len(self.shots))
+        self.assertIn("5.00", svg)  # hit factor formatted
