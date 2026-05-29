@@ -41,7 +41,7 @@ def render_example_overlay(gun, ammo, shooter, shooter_name, out_dir=OUT_DIR):
     image link from the repo root.
     """
     target_def = targets.TARGET_DEFS[EXAMPLE_TARGET]
-    slug = _slugify(f'{gun["name"]} {ammo["name"]}')
+    slug = _slugify(f"{gun['name']} {ammo['name']}")
     seed = _example_seed(slug)
 
     series = []
@@ -60,12 +60,14 @@ def render_example_overlay(gun, ammo, shooter, shooter_name, out_dir=OUT_DIR):
         if shots:
             score = dict(score)
             score["vertical_walk_cm"] = shots[-1]["y_cm"] - shots[0]["y_cm"]
-        series.append({
-            "label": stance,
-            "color": STANCE_COLORS[stance],
-            "shots": shots,
-            "score": score,
-        })
+        series.append(
+            {
+                "label": stance,
+                "color": STANCE_COLORS[stance],
+                "shots": shots,
+                "score": score,
+            }
+        )
 
     run_meta = {
         "gun": gun["name"],
@@ -79,6 +81,8 @@ def render_example_overlay(gun, ammo, shooter, shooter_name, out_dir=OUT_DIR):
 
     os.makedirs(out_dir, exist_ok=True)
     filename = f"{slug}.svg"
-    with open(os.path.join(out_dir, filename), "w", encoding="utf-8", newline="\n") as fp:
+    with open(
+        os.path.join(out_dir, filename), "w", encoding="utf-8", newline="\n"
+    ) as fp:
         fp.write(svg)
     return f"{out_dir.rstrip('/')}/{filename}"
