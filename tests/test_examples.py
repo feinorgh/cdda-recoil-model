@@ -1,3 +1,5 @@
+import contextlib
+import io
 import os
 import tempfile
 import unittest
@@ -46,3 +48,26 @@ class TestExampleOverlay(unittest.TestCase):
             with open(path) as fp:
                 second = fp.read()
             self.assertEqual(first, second)
+
+
+class TestReportHook(unittest.TestCase):
+    def setUp(self):
+        recoil.load_data()
+        self.gun = recoil.WEAPONS["9x19mm Parabellum"][0]
+        self.ammo = recoil.AMMO["9x19mm Parabellum"][0]
+
+    def test_show_recoil_emits_stance_comparison_link(self):
+        original = examples.render_example_overlay
+        examples.render_example_overlay = (
+            lambda *a, **k: "targets/example/stub.svg"
+        )
+        try:
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                recoil.show_recoil(self.gun, self.ammo)
+            out = buf.getvalue()
+        finally:
+            examples.render_example_overlay = original
+        self.assertIn("5-Shot Stance Comparison", out)
+        self.assertIn("![", out)
+        self.assertIn("targets/example/stub.svg", out)
