@@ -48,3 +48,38 @@ class TestBullseyeScoring(unittest.TestCase):
         self.assertAlmostEqual(result["group_size_cm"], (8.0) ** 0.5, places=6)
         self.assertAlmostEqual(result["mpi_x_cm"], 0.0, places=6)
         self.assertAlmostEqual(result["mpi_y_cm"], 0.0, places=6)
+
+
+POPPER = {
+    "type": "popper",
+    "name": "Test Popper",
+    "head_radius_cm": 15.0,    # round head centred on the point of aim
+    "body_top_y_cm": -8.0,     # top edge of the body, below the aim point
+    "body_width_cm": 20.0,
+    "body_height_cm": 60.0,
+    "size_cm": 80.0,
+}
+
+
+class TestPopperScoring(unittest.TestCase):
+    def test_first_hit_neutralizes_and_records_shot_and_time(self):
+        shots = [
+            {"x_cm": 30.0, "y_cm": 30.0, "shot_index": 0, "time_s": 0.0},   # miss
+            {"x_cm": 2.0, "y_cm": 1.0, "shot_index": 1, "time_s": 0.4},     # head hit
+            {"x_cm": 0.0, "y_cm": 0.0, "shot_index": 2, "time_s": 0.8},
+        ]
+        result = scoring.score_string(shots, POPPER)
+        self.assertTrue(result["neutralized"])
+        self.assertEqual(result["shots_to_neutralize"], 2)
+        self.assertAlmostEqual(result["time_to_hit_s"], 0.4, places=6)
+
+    def test_body_hit_counts(self):
+        shots = [{"x_cm": 0.0, "y_cm": -40.0, "shot_index": 0, "time_s": 0.0}]
+        result = scoring.score_string(shots, POPPER)
+        self.assertTrue(result["neutralized"])
+
+    def test_all_misses_not_neutralized(self):
+        shots = [{"x_cm": 100.0, "y_cm": 0.0, "shot_index": 0, "time_s": 0.0}]
+        result = scoring.score_string(shots, POPPER)
+        self.assertFalse(result["neutralized"])
+        self.assertIsNone(result["shots_to_neutralize"])

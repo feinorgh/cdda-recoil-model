@@ -57,11 +57,43 @@ def _score_bullseye(shots, target_def):
     }
 
 
+def _hits_popper(shot, target_def):
+    x, y = shot["x_cm"], shot["y_cm"]
+    head_r = target_def["head_radius_cm"]
+    if math.hypot(x, y) <= head_r:
+        return True
+    half_w = target_def["body_width_cm"] / 2.0
+    top = target_def["body_top_y_cm"]
+    bottom = top - target_def["body_height_cm"]
+    return (-half_w <= x <= half_w) and (bottom <= y <= top)
+
+
+def _score_popper(shots, target_def):
+    neutralized = False
+    shots_to_neutralize = None
+    time_to_hit = None
+    for shot in shots:
+        if _hits_popper(shot, target_def):
+            neutralized = True
+            shots_to_neutralize = shot["shot_index"] + 1
+            time_to_hit = shot["time_s"]
+            break
+    return {
+        "target": "popper",
+        "neutralized": neutralized,
+        "shots_to_neutralize": shots_to_neutralize,
+        "time_to_hit_s": time_to_hit,
+        "group_size_cm": _group_size_cm(shots),
+    }
+
+
 def score_string(shots, target_def):
     """Score `shots` against `target_def`, dispatching on its ``type``."""
     target_type = target_def["type"]
     if target_type == "bullseye":
         return _score_bullseye(shots, target_def)
+    if target_type == "popper":
+        return _score_popper(shots, target_def)
     raise ValueError(
         f"Invalid target type '{target_type}'. "
         f"Valid types are: bullseye, ipsc_silhouette, popper"
