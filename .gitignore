@@ -131,3 +131,6 @@ dmypy.json
 # Project-local git worktrees
 .worktrees/
 .superpowers/
+
+# Ad-hoc target render output (the curated set under targets/ is committed)
+targets/scratch/
