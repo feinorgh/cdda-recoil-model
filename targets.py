@@ -7,9 +7,16 @@ TARGET_DEFS = {
         "type": "bullseye",
         "name": "ISSF 25 m Precision",
         "rings": [
-            (10, 2.5), (9, 5.0), (8, 7.5), (7, 10.0),
-            (6, 12.5), (5, 15.0), (4, 17.5), (3, 20.0),
-            (2, 22.5), (1, 25.0),
+            (10, 2.5),
+            (9, 5.0),
+            (8, 7.5),
+            (7, 10.0),
+            (6, 12.5),
+            (5, 15.0),
+            (4, 17.5),
+            (3, 20.0),
+            (2, 22.5),
+            (1, 25.0),
         ],
         "x_ring_radius_cm": 1.25,
         "black_radius_cm": 10.0,
@@ -37,8 +44,8 @@ TARGET_DEFS = {
 }
 
 # Layout constants (SVG pixels).
-_FACE_PX = 360       # the target face occupies a square of this size
-_PANEL_PX = 220      # width of the side stats panel
+_FACE_PX = 360  # the target face occupies a square of this size
+_PANEL_PX = 220  # width of the side stats panel
 _MARGIN_PX = 20
 
 
@@ -68,8 +75,10 @@ def _shot_markers(shots, target_def, color="#c0392b"):
 
 def _stats_panel(lines):
     x = _MARGIN_PX * 2 + _FACE_PX
-    parts = [f'<line x1="{x - 8}" y1="{_MARGIN_PX}" x2="{x - 8}" '
-             f'y2="{_MARGIN_PX + _FACE_PX}" stroke="#dddddd"/>']
+    parts = [
+        f'<line x1="{x - 8}" y1="{_MARGIN_PX}" x2="{x - 8}" '
+        f'y2="{_MARGIN_PX + _FACE_PX}" stroke="#dddddd"/>'
+    ]
     y = _MARGIN_PX + 18
     for label, value in lines:
         parts.append(
@@ -116,17 +125,24 @@ def _render_bullseye(target_def, shots, score, run_meta):
     parts = [_svg_open()]
     parts.extend(_bullseye_face(target_def))
     parts.append(_shot_markers(shots, target_def))
-    parts.append(_stats_panel([
-        ("Scenario", run_meta["scenario"]),
-        ("Gun", run_meta["gun"]),
-        ("Ammo", run_meta["ammo"]),
-        ("Shooter", run_meta["shooter"]),
-        ("Range", f'{run_meta["range_m"]} m'),
-        ("String", f'{run_meta["shot_count"]} rds / {run_meta["time_limit_s"]} s'),
-        ("Score", f'{score["total_score"]} ({score["x_count"]}X)'),
-        ("Group", f'{score["group_size_cm"]:.1f} cm'),
-        ("MPI", f'{score["mpi_x_cm"]:.1f}, {score["mpi_y_cm"]:.1f} cm'),
-    ]))
+    parts.append(
+        _stats_panel(
+            [
+                ("Scenario", run_meta["scenario"]),
+                ("Gun", run_meta["gun"]),
+                ("Ammo", run_meta["ammo"]),
+                ("Shooter", run_meta["shooter"]),
+                ("Range", f"{run_meta['range_m']} m"),
+                (
+                    "String",
+                    f"{run_meta['shot_count']} rds / {run_meta['time_limit_s']} s",
+                ),
+                ("Score", f"{score['total_score']} ({score['x_count']}X)"),
+                ("Group", f"{score['group_size_cm']:.1f} cm"),
+                ("MPI", f"{score['mpi_x_cm']:.1f}, {score['mpi_y_cm']:.1f} cm"),
+            ]
+        )
+    )
     parts.append("</svg>")
     return "\n".join(parts)
 
@@ -160,20 +176,24 @@ def _render_popper(target_def, shots, score, run_meta):
             f'<text x="{head_cx:.1f}" y="{head_cy:.1f}" text-anchor="middle" '
             f'font-family="sans-serif" font-size="22" font-weight="bold" '
             f'fill="#1e8449" transform="rotate(-12 {head_cx:.1f} {head_cy:.1f})">'
-            f'NEUTRALIZED</text>'
+            f"NEUTRALIZED</text>"
         )
     stn = score.get("shots_to_neutralize")
     tth = score.get("time_to_hit_s")
-    parts.append(_stats_panel([
-        ("Scenario", run_meta["scenario"]),
-        ("Gun", run_meta["gun"]),
-        ("Ammo", run_meta["ammo"]),
-        ("Shooter", run_meta["shooter"]),
-        ("Range", f'{run_meta["range_m"]} m'),
-        ("Result", "Neutralized" if score.get("neutralized") else "Standing"),
-        ("Shots to hit", stn if stn is not None else "-"),
-        ("Time to hit", f'{tth:.2f} s' if tth is not None else "-"),
-    ]))
+    parts.append(
+        _stats_panel(
+            [
+                ("Scenario", run_meta["scenario"]),
+                ("Gun", run_meta["gun"]),
+                ("Ammo", run_meta["ammo"]),
+                ("Shooter", run_meta["shooter"]),
+                ("Range", f"{run_meta['range_m']} m"),
+                ("Result", "Neutralized" if score.get("neutralized") else "Standing"),
+                ("Shots to hit", stn if stn is not None else "-"),
+                ("Time to hit", f"{tth:.2f} s" if tth is not None else "-"),
+            ]
+        )
+    )
     parts.append("</svg>")
     return "\n".join(parts)
 
@@ -196,32 +216,38 @@ def _render_ipsc(target_def, shots, score, run_meta):
         )
     parts.append(_shot_markers(shots, target_def))
     zc = score["zone_counts"]
-    parts.append(_stats_panel([
-        ("Scenario", run_meta["scenario"]),
-        ("Gun", run_meta["gun"]),
-        ("Ammo", run_meta["ammo"]),
-        ("Shooter", run_meta["shooter"]),
-        ("Range", f'{run_meta["range_m"]} m'),
-        ("Points", score["total_points"]),
-        ("Zones", f'A{zc.get("A", 0)} C{zc.get("C", 0)} D{zc.get("D", 0)}'),
-        ("Misses", score["misses"]),
-        ("Hit factor", f'{score["hit_factor"]:.2f}'),
-    ]))
+    parts.append(
+        _stats_panel(
+            [
+                ("Scenario", run_meta["scenario"]),
+                ("Gun", run_meta["gun"]),
+                ("Ammo", run_meta["ammo"]),
+                ("Shooter", run_meta["shooter"]),
+                ("Range", f"{run_meta['range_m']} m"),
+                ("Points", score["total_points"]),
+                ("Zones", f"A{zc.get('A', 0)} C{zc.get('C', 0)} D{zc.get('D', 0)}"),
+                ("Misses", score["misses"]),
+                ("Hit factor", f"{score['hit_factor']:.2f}"),
+            ]
+        )
+    )
     parts.append("</svg>")
     return "\n".join(parts)
 
 
 def _overlay_panel(series, run_meta):
     x = _MARGIN_PX * 2 + _FACE_PX
-    parts = [f'<line x1="{x - 8}" y1="{_MARGIN_PX}" x2="{x - 8}" '
-             f'y2="{_MARGIN_PX + _FACE_PX}" stroke="#dddddd"/>']
+    parts = [
+        f'<line x1="{x - 8}" y1="{_MARGIN_PX}" x2="{x - 8}" '
+        f'y2="{_MARGIN_PX + _FACE_PX}" stroke="#dddddd"/>'
+    ]
     y = _MARGIN_PX + 18
     for label, value in [
         ("Gun", run_meta["gun"]),
         ("Ammo", run_meta["ammo"]),
         ("Shooter", run_meta["shooter"]),
-        ("Range", f'{run_meta["range_m"]} m'),
-        ("String", f'{run_meta["shot_count"]} rds / {run_meta["time_limit_s"]} s'),
+        ("Range", f"{run_meta['range_m']} m"),
+        ("String", f"{run_meta['shot_count']} rds / {run_meta['time_limit_s']} s"),
     ]:
         parts.append(
             f'<text x="{x}" y="{y}" font-family="sans-serif" font-size="12" '
@@ -242,8 +268,8 @@ def _overlay_panel(series, run_meta):
             f'fill="{s["color"]}" stroke="#ffffff" stroke-width="0.5"/>'
         )
         summary = (
-            f'{s["label"]}: {score["group_size_cm"]:.1f} cm, '
-            f'{score["total_score"]} ({score["x_count"]}X)'
+            f"{s['label']}: {score['group_size_cm']:.1f} cm, "
+            f"{score['total_score']} ({score['x_count']}X)"
         )
         parts.append(
             f'<text x="{x + 18}" y="{y}" font-family="sans-serif" '
@@ -280,12 +306,12 @@ def render_svg(target_def, shots, score, run_meta):
     """Render an authentic SVG target with shot markers and a stats panel."""
     target_type = target_def["type"]
     if target_type == "bullseye":
-       return _render_bullseye(target_def, shots, score, run_meta)
+        return _render_bullseye(target_def, shots, score, run_meta)
     if target_type == "popper":
-       return _render_popper(target_def, shots, score, run_meta)
+        return _render_popper(target_def, shots, score, run_meta)
     if target_type == "ipsc_silhouette":
         return _render_ipsc(target_def, shots, score, run_meta)
     raise ValueError(
-       f"Invalid target type '{target_type}'. "
-       f"Valid types are: bullseye, ipsc_silhouette, popper"
+        f"Invalid target type '{target_type}'. "
+        f"Valid types are: bullseye, ipsc_silhouette, popper"
     )
