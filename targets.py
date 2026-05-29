@@ -55,13 +55,13 @@ def _to_px(x_cm, y_cm, target_def):
     return cx + x_cm * scale, cy - y_cm * scale
 
 
-def _shot_markers(shots, target_def):
+def _shot_markers(shots, target_def, color="#c0392b"):
     parts = []
     for shot in shots:
         px, py = _to_px(shot["x_cm"], shot["y_cm"], target_def)
         parts.append(
             f'<circle class="shot" cx="{px:.1f}" cy="{py:.1f}" r="4" '
-            f'fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>'
+            f'fill="{color}" stroke="#ffffff" stroke-width="0.8"/>'
         )
     return "\n".join(parts)
 
@@ -90,15 +90,15 @@ def _svg_open():
     )
 
 
-def _render_bullseye(target_def, shots, score, run_meta):
+def _bullseye_face(target_def):
+    """SVG parts for the bullseye background and rings (no shots/panel)."""
     cx = _MARGIN_PX + _FACE_PX / 2.0
     cy = _MARGIN_PX + _FACE_PX / 2.0
     scale = _scale(target_def)
-    parts = [_svg_open()]
-    parts.append(
+    parts = [
         f'<rect x="{_MARGIN_PX}" y="{_MARGIN_PX}" width="{_FACE_PX}" '
         f'height="{_FACE_PX}" fill="#f4f1e8" stroke="#999999"/>'
-    )
+    ]
     # Rings outer-first so inner rings draw on top.
     for ring_score, radius in reversed(target_def["rings"]):
         r = radius * scale
@@ -109,6 +109,12 @@ def _render_bullseye(target_def, shots, score, run_meta):
             f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}" '
             f'fill="{fill}" stroke="{stroke}" stroke-width="0.8"/>'
         )
+    return parts
+
+
+def _render_bullseye(target_def, shots, score, run_meta):
+    parts = [_svg_open()]
+    parts.extend(_bullseye_face(target_def))
     parts.append(_shot_markers(shots, target_def))
     parts.append(_stats_panel([
         ("Scenario", run_meta["scenario"]),
@@ -201,6 +207,71 @@ def _render_ipsc(target_def, shots, score, run_meta):
         ("Misses", score["misses"]),
         ("Hit factor", f'{score["hit_factor"]:.2f}'),
     ]))
+    parts.append("</svg>")
+    return "\n".join(parts)
+
+
+def _overlay_panel(series, run_meta):
+    x = _MARGIN_PX * 2 + _FACE_PX
+    parts = [f'<line x1="{x - 8}" y1="{_MARGIN_PX}" x2="{x - 8}" '
+             f'y2="{_MARGIN_PX + _FACE_PX}" stroke="#dddddd"/>']
+    y = _MARGIN_PX + 18
+    for label, value in [
+        ("Gun", run_meta["gun"]),
+        ("Ammo", run_meta["ammo"]),
+        ("Shooter", run_meta["shooter"]),
+        ("Range", f'{run_meta["range_m"]} m'),
+        ("String", f'{run_meta["shot_count"]} rds / {run_meta["time_limit_s"]} s'),
+    ]:
+        parts.append(
+            f'<text x="{x}" y="{y}" font-family="sans-serif" font-size="12" '
+            f'fill="#333333">{html.escape(str(label))}: '
+            f'<tspan font-weight="bold">{html.escape(str(value))}</tspan></text>'
+        )
+        y += 20
+    y += 10
+    parts.append(
+        f'<text x="{x}" y="{y}" font-family="sans-serif" font-size="12" '
+        f'font-weight="bold" fill="#333333">Stance comparison</text>'
+    )
+    y += 22
+    for s in series:
+        score = s["score"]
+        parts.append(
+            f'<rect x="{x}" y="{y - 10}" width="11" height="11" '
+            f'fill="{s["color"]}" stroke="#ffffff" stroke-width="0.5"/>'
+        )
+        summary = (
+            f'{s["label"]}: {score["group_size_cm"]:.1f} cm, '
+            f'{score["total_score"]} ({score["x_count"]}X)'
+        )
+        parts.append(
+            f'<text x="{x + 18}" y="{y}" font-family="sans-serif" '
+            f'font-size="12" fill="#333333">{html.escape(summary)}</text>'
+        )
+        y += 18
+        walk = score.get("vertical_walk_cm")
+        if walk is not None:
+            parts.append(
+                f'<text x="{x + 18}" y="{y}" font-family="sans-serif" '
+                f'font-size="10" fill="#777777">walk {walk:.1f} cm</text>'
+            )
+            y += 18
+    return "\n".join(parts)
+
+
+def render_overlay_svg(target_def, series, run_meta):
+    """Render a bullseye with several color-coded shot series overlaid.
+
+    `series` is an ordered list of dicts with keys ``label``, ``color``,
+    ``shots`` (a list of shot dicts) and ``score`` (a bullseye score dict that
+    may include ``vertical_walk_cm``).
+    """
+    parts = [_svg_open()]
+    parts.extend(_bullseye_face(target_def))
+    for s in series:
+        parts.append(_shot_markers(s["shots"], target_def, color=s["color"]))
+    parts.append(_overlay_panel(series, run_meta))
     parts.append("</svg>")
     return "\n".join(parts)
 
