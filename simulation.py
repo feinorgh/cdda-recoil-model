@@ -13,23 +13,23 @@ import recoil
 
 # Active compensation between shots: effectiveness in [0, 1] of cancelling the
 # accumulated muzzle climb before the next shot.
-COMP_BASE = 0.55       # baseline fraction of climb a shooter cancels
-COMP_SKILL = 0.06      # additional effectiveness per skill point
+COMP_BASE = 0.55  # baseline fraction of climb a shooter cancels
+COMP_SKILL = 0.06  # additional effectiveness per skill point
 
 # Anticipation / flinch: a systematic pre-shot push, down and toward the
 # trigger hand. Scales with recoil energy and time pressure; reduced by skill
 # and strength.
-FLINCH_BASE = 0.0009          # rad per joule of free-recoil energy
-FLINCH_LATERAL_FRAC = 0.5     # lateral push as a fraction of the downward push
-SKILL_FLINCH = 0.10           # skill reduction per point
-STR_FLINCH = 0.04             # strength reduction per point
-PRESSURE_FLINCH = 0.5         # extra flinch per unit of time pressure
+FLINCH_BASE = 0.0009  # rad per joule of free-recoil energy
+FLINCH_LATERAL_FRAC = 0.5  # lateral push as a fraction of the downward push
+SKILL_FLINCH = 0.10  # skill reduction per point
+STR_FLINCH = 0.04  # strength reduction per point
+PRESSURE_FLINCH = 0.5  # extra flinch per unit of time pressure
 
 # Random scatter (inherent wobble), expressed as an angular sigma in radians.
-SCATTER_BASE = 0.0006         # baseline sigma
-SKILL_SCATTER = 0.18          # skill reduction per point
-PRESSURE_SCATTER = 0.5        # extra sigma per unit of time pressure
-RECOIL_SCATTER = 0.03         # extra sigma per joule of free-recoil energy
+SCATTER_BASE = 0.0006  # baseline sigma
+SKILL_SCATTER = 0.18  # skill reduction per point
+PRESSURE_SCATTER = 0.5  # extra sigma per unit of time pressure
+RECOIL_SCATTER = 0.03  # extra sigma per joule of free-recoil energy
 
 
 def round_recoil_data(gun, ammo, rounds):
@@ -47,7 +47,7 @@ def round_recoil_data(gun, ammo, rounds):
     return {
         "system_mass_kg": system_mass_kg,
         "ejecta_momentum": ejecta_momentum,
-        "free_recoil_energy": ejecta_momentum ** 2 / (2 * system_mass_kg),
+        "free_recoil_energy": ejecta_momentum**2 / (2 * system_mass_kg),
     }
 
 
@@ -100,7 +100,8 @@ def simulate_string(gun, ammo, shooter, scenario, flinch=True, scatter=True):
 
         if flinch:
             flinch_mag = (
-                FLINCH_BASE * energy
+                FLINCH_BASE
+                * energy
                 * max(0.0, 1.0 - skill * SKILL_FLINCH)
                 * (1.0 + pressure * PRESSURE_FLINCH)
                 / (1.0 + strength * STR_FLINCH)
