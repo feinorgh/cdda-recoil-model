@@ -98,7 +98,7 @@ def simulate_string(gun, ammo, shooter, scenario, flinch=True, scatter=True):
         impact_x = 0.0
         impact_y = theta_y
 
-        if flinch:
+        if flinch and i > 0:  # the first shot shouldn't cause flinching
             flinch_mag = (
                 FLINCH_BASE
                 * energy

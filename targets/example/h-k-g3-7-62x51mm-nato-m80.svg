@@ -10,17 +10,17 @@
 <circle cx="200.0" cy="200.0" r="49.1" fill="#111111" stroke="#ffffff" stroke-width="0.8"/>
 <circle cx="200.0" cy="200.0" r="32.7" fill="#111111" stroke="#ffffff" stroke-width="0.8"/>
 <circle cx="200.0" cy="200.0" r="16.4" fill="#111111" stroke="#ffffff" stroke-width="0.8"/>
-<circle class="shot" cx="151.9" cy="283.3" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="193.0" cy="201.1" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="172.3" cy="-184.1" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="163.2" cy="-485.6" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="166.6" cy="-667.4" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="147.0" cy="-762.5" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
-<circle class="shot" cx="156.5" cy="275.3" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="193.7" cy="201.0" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="174.9" cy="-65.8" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="166.7" cy="-261.0" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="169.8" cy="-362.3" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="152.1" cy="-400.6" r="4" fill="#2471a3" stroke="#ffffff" stroke-width="0.8"/>
-<circle class="shot" cx="161.7" cy="266.3" r="4" fill="#1e8449" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="194.4" cy="200.9" r="4" fill="#1e8449" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="177.9" cy="67.8" r="4" fill="#1e8449" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="170.7" cy="-20.9" r="4" fill="#1e8449" stroke="#ffffff" stroke-width="0.8"/>
 <circle class="shot" cx="173.4" cy="-52.8" r="4" fill="#1e8449" stroke="#ffffff" stroke-width="0.8"/>
@@ -33,12 +33,12 @@
 <text x="400" y="118" font-family="sans-serif" font-size="12" fill="#333333">String: <tspan font-weight="bold">5 rds / 5.0 s</tspan></text>
 <text x="400" y="148" font-family="sans-serif" font-size="12" font-weight="bold" fill="#333333">Stance comparison</text>
 <rect x="400" y="160" width="11" height="11" fill="#c0392b" stroke="#ffffff" stroke-width="0.5"/>
-<text x="418" y="170" font-family="sans-serif" font-size="12" fill="#333333">standing: 159.8 cm, 5 (0X)</text>
-<text x="418" y="188" font-family="sans-serif" font-size="10" fill="#777777">walk 159.8 cm</text>
+<text x="418" y="170" font-family="sans-serif" font-size="12" fill="#333333">standing: 147.4 cm, 10 (1X)</text>
+<text x="418" y="188" font-family="sans-serif" font-size="10" fill="#777777">walk 147.2 cm</text>
 <rect x="400" y="196" width="11" height="11" fill="#2471a3" stroke="#ffffff" stroke-width="0.5"/>
-<text x="418" y="206" font-family="sans-serif" font-size="12" fill="#333333">crouching: 103.3 cm, 5 (0X)</text>
-<text x="418" y="224" font-family="sans-serif" font-size="10" fill="#777777">walk 103.3 cm</text>
+<text x="418" y="206" font-family="sans-serif" font-size="12" fill="#333333">crouching: 92.1 cm, 10 (1X)</text>
+<text x="418" y="224" font-family="sans-serif" font-size="10" fill="#777777">walk 91.9 cm</text>
 <rect x="400" y="232" width="11" height="11" fill="#1e8449" stroke="#ffffff" stroke-width="0.5"/>
-<text x="418" y="242" font-family="sans-serif" font-size="12" fill="#333333">prone: 48.8 cm, 8 (0X)</text>
-<text x="418" y="260" font-family="sans-serif" font-size="10" fill="#777777">walk 48.3 cm</text>
+<text x="418" y="242" font-family="sans-serif" font-size="12" fill="#333333">prone: 38.9 cm, 12 (1X)</text>
+<text x="418" y="260" font-family="sans-serif" font-size="10" fill="#777777">walk 38.3 cm</text>
 </svg>
