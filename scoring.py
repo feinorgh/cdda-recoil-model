@@ -87,13 +87,48 @@ def _score_popper(shots, target_def):
     }
 
 
-def score_string(shots, target_def):
-    """Score `shots` against `target_def`, dispatching on its ``type``."""
+def _score_ipsc(shots, target_def, string_time_s):
+    zones = target_def["zones"]  # inner-first list of (label, points, hw, hh)
+    total = 0
+    misses = 0
+    zone_counts = {label: 0 for label, _pts, _hw, _hh in zones}
+    for shot in shots:
+        x, y = shot["x_cm"], shot["y_cm"]
+        matched = None
+        for label, points, hw, hh in zones:
+            if (x / hw) ** 2 + (y / hh) ** 2 <= 1.0:
+                matched = (label, points)
+                break
+        if matched is None:
+            misses += 1
+        else:
+            label, points = matched
+            zone_counts[label] += 1
+            total += points
+    hit_factor = total / string_time_s if string_time_s and string_time_s > 0 else 0.0
+    return {
+        "target": "ipsc_silhouette",
+        "total_points": total,
+        "zone_counts": zone_counts,
+        "misses": misses,
+        "hit_factor": hit_factor,
+        "group_size_cm": _group_size_cm(shots),
+    }
+
+
+def score_string(shots, target_def, string_time_s=None):
+    """Score `shots` against `target_def`, dispatching on its ``type``.
+
+    `string_time_s` is the total string time used for IPSC hit-factor scoring;
+    it is ignored by other target types.
+    """
     target_type = target_def["type"]
     if target_type == "bullseye":
         return _score_bullseye(shots, target_def)
     if target_type == "popper":
         return _score_popper(shots, target_def)
+    if target_type == "ipsc_silhouette":
+        return _score_ipsc(shots, target_def, string_time_s)
     raise ValueError(
         f"Invalid target type '{target_type}'. "
         f"Valid types are: bullseye, ipsc_silhouette, popper"

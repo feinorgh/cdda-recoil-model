@@ -83,3 +83,43 @@ class TestPopperScoring(unittest.TestCase):
         result = scoring.score_string(shots, POPPER)
         self.assertFalse(result["neutralized"])
         self.assertIsNone(result["shots_to_neutralize"])
+
+
+IPSC = {
+    "type": "ipsc_silhouette",
+    "name": "Test IPSC",
+    # (label, points, half_width_cm, half_height_cm), inner zone first
+    "zones": [
+        ("A", 5, 7.5, 15.0),
+        ("C", 3, 15.0, 23.0),
+        ("D", 1, 22.5, 30.0),
+    ],
+    "size_cm": 70.0,
+}
+
+
+class TestIpscScoring(unittest.TestCase):
+    def test_center_is_alpha(self):
+        shots = [{"x_cm": 0.0, "y_cm": 0.0, "shot_index": 0, "time_s": 0.0}]
+        result = scoring.score_string(shots, IPSC, string_time_s=2.0)
+        self.assertEqual(result["total_points"], 5)
+        self.assertEqual(result["zone_counts"]["A"], 1)
+
+    def test_zone_breakdown_and_miss(self):
+        shots = [
+            {"x_cm": 0.0, "y_cm": 0.0, "shot_index": 0, "time_s": 0.0},    # A
+            {"x_cm": 12.0, "y_cm": 0.0, "shot_index": 1, "time_s": 0.0},   # C
+            {"x_cm": 0.0, "y_cm": 28.0, "shot_index": 2, "time_s": 0.0},   # D
+            {"x_cm": 50.0, "y_cm": 0.0, "shot_index": 3, "time_s": 0.0},   # miss
+        ]
+        result = scoring.score_string(shots, IPSC, string_time_s=2.0)
+        self.assertEqual(result["total_points"], 5 + 3 + 1)
+        self.assertEqual(result["zone_counts"]["A"], 1)
+        self.assertEqual(result["zone_counts"]["C"], 1)
+        self.assertEqual(result["zone_counts"]["D"], 1)
+        self.assertEqual(result["misses"], 1)
+
+    def test_hit_factor_is_points_over_time(self):
+        shots = [{"x_cm": 0.0, "y_cm": 0.0, "shot_index": 0, "time_s": 0.0}]
+        result = scoring.score_string(shots, IPSC, string_time_s=2.5)
+        self.assertAlmostEqual(result["hit_factor"], 5 / 2.5, places=6)
