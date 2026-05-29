@@ -14,6 +14,7 @@ AMMO = None
 WEAPONS = None
 SHOOTER = None
 
+
 def load_data():
     with open("ammo.json", "r") as fp:
         global AMMO
@@ -58,8 +59,16 @@ STANCE_FACTORS = {
 }
 
 TYPE_DEFAULTS = {
-    "pistol": {"action_type": "locked_breech", "support_class": "two_hand", "bore_offset": 0.05},
-    "submachinegun": {"action_type": "direct_blowback", "support_class": "stocked", "bore_offset": 0.04},
+    "pistol": {
+        "action_type": "locked_breech",
+        "support_class": "two_hand",
+        "bore_offset": 0.05,
+    },
+    "submachinegun": {
+        "action_type": "direct_blowback",
+        "support_class": "stocked",
+        "bore_offset": 0.04,
+    },
     "rifle": {"action_type": "gas", "support_class": "stocked", "bore_offset": 0.06},
 }
 
@@ -87,7 +96,9 @@ def calculate_free_recoil(gun, used_ammo, configuration):
         )
 
     if configuration == "full":
-        ammo_mass = gun_data["mag_mass"] + gun_data["capacity"] * used_ammo["cartridge_mass"]
+        ammo_mass = (
+            gun_data["mag_mass"] + gun_data["capacity"] * used_ammo["cartridge_mass"]
+        )
     else:
         ammo_mass = gun_data["mag_mass"]
 
@@ -102,7 +113,7 @@ def calculate_free_recoil(gun, used_ammo, configuration):
     gas_factor = ACTION_GAS_FACTORS[action_type]
     ejecta_momentum = ((m_prj * actual_v) + (m_prp * actual_v * gas_factor)) / 1000
     recoil_velocity = ejecta_momentum / system_mass_kg
-    free_recoil_energy = ejecta_momentum ** 2 / (2 * system_mass_kg)
+    free_recoil_energy = ejecta_momentum**2 / (2 * system_mass_kg)
 
     return {
         "nominal_velocity": v_nominal,
@@ -123,23 +134,21 @@ def resolve_support_class(shooterdata, gun_data):
 
 def calculate_disturbance(shooterdata, gun, recoil_data, stance):
     gun_data = get_gun_defaults(gun)
-    
+
     # Validate stance
     if stance not in STANCE_FACTORS:
         valid_stances = ", ".join(sorted(STANCE_FACTORS.keys()))
         raise ValueError(
-            f"Invalid stance '{stance}'. "
-            f"Valid stances are: {valid_stances}"
+            f"Invalid stance '{stance}'. Valid stances are: {valid_stances}"
         )
-    
+
     # Validate system_mass_kg
     system_mass_kg = recoil_data["system_mass_kg"]
     if system_mass_kg <= 0:
         raise ValueError(
-            f"Invalid system_mass_kg '{system_mass_kg}'. "
-            f"System mass must be positive."
+            f"Invalid system_mass_kg '{system_mass_kg}'. System mass must be positive."
         )
-    
+
     # Validate action_type
     action_type = gun_data["action_type"]
     if action_type not in ACTION_SHARPNESS:
@@ -148,9 +157,9 @@ def calculate_disturbance(shooterdata, gun, recoil_data, stance):
             f"Invalid action_type '{action_type}'. "
             f"Valid action types are: {valid_types}"
         )
-    
+
     support_class = resolve_support_class(shooterdata, gun_data)
-    
+
     # Validate support_class
     if support_class not in SUPPORT_FACTORS:
         valid_support = ", ".join(sorted(SUPPORT_FACTORS.keys()))
@@ -158,36 +167,37 @@ def calculate_disturbance(shooterdata, gun, recoil_data, stance):
             f"Invalid support_class '{support_class}'. "
             f"Valid support classes are: {valid_support}"
         )
-    
+
     support_factor = SUPPORT_FACTORS[support_class]
     stance_factor = STANCE_FACTORS[stance]
     action_sharpness = ACTION_SHARPNESS[action_type]
     strength = shooterdata["strength"]
     skill = shooterdata.get("skill", 0)
-    
+
     # Validate strength
     if strength < 0:
         raise ValueError(
-            f"Invalid strength '{strength}'. "
-            f"Strength must be non-negative."
+            f"Invalid strength '{strength}'. Strength must be non-negative."
         )
-    
+
     # Validate skill
     if skill < 0:
-        raise ValueError(
-            f"Invalid skill '{skill}'. "
-            f"Skill must be non-negative."
-        )
-    
+        raise ValueError(f"Invalid skill '{skill}'. Skill must be non-negative.")
+
     bore_offset = gun_data["bore_offset"]
     ejecta_momentum = recoil_data["ejecta_momentum"]
 
-    control_factor = support_factor * stance_factor * (1 + strength * 0.08 + skill * 0.06)
-    aim_kick_rad = (ejecta_momentum * bore_offset * action_sharpness) / (system_mass_kg * control_factor)
+    control_factor = (
+        support_factor * stance_factor * (1 + strength * 0.08 + skill * 0.06)
+    )
+    aim_kick_rad = (ejecta_momentum * bore_offset * action_sharpness) / (
+        system_mass_kg * control_factor
+    )
     aim_kick_qd = ((aim_kick_rad * 180) / math.pi) / 4
     recovery_seconds = max(
         0.05,
-        (ejecta_momentum * action_sharpness) / (support_factor * stance_factor * (1 + strength * 0.10 + skill * 0.08)),
+        (ejecta_momentum * action_sharpness)
+        / (support_factor * stance_factor * (1 + strength * 0.10 + skill * 0.08)),
     )
 
     return {
@@ -214,9 +224,14 @@ def calculate_throwoff(shooter, gun, recoil_full, recoil_empty):
     shooterdata = SHOOTER[shooter]
     h_shooter = shooterdata.get("height") / 1000
     m_shooter = shooterdata.get("weight") / 1000
-    print(f"\n#### {shooter} ({h_shooter:.2f} m, {m_shooter:.2f} kg, STR: {shooterdata['strength']})")
+    print(
+        f"\n#### {shooter} ({h_shooter:.2f} m, {m_shooter:.2f} kg, STR: {shooterdata['strength']})"
+    )
 
-    for label, recoil_data in [("Full Magazine", recoil_full), ("Empty Magazine", recoil_empty)]:
+    for label, recoil_data in [
+        ("Full Magazine", recoil_full),
+        ("Empty Magazine", recoil_empty),
+    ]:
         print(f"\n##### {label}\n")
         print("| Stance | Aim kick (rad) | Aim kick (¼d) | Recovery (s) | Support |")
         print("|-------:|---------------:|--------------:|-------------:|--------:|")
@@ -230,11 +245,15 @@ def calculate_throwoff(shooter, gun, recoil_full, recoil_empty):
 
 
 def show_recoil(gun, used_ammo):
-    print(f"## {gun['name']}: {used_ammo['name']} ({gun['barrel_length']}\" barrel, {gun['capacity']} rd. mag)")
+    print(
+        f'## {gun["name"]}: {used_ammo["name"]} ({gun["barrel_length"]}" barrel, {gun["capacity"]} rd. mag)'
+    )
     recoil_full = calculate_free_recoil(gun, used_ammo, "full")
     recoil_empty = calculate_free_recoil(gun, used_ammo, "empty")
     prp_prj_ratio = used_ammo["propellant_mass"] / used_ammo["bullet_mass"]
-    e_bullet = 0.5 * (used_ammo["bullet_mass"] / 1000) * recoil_full["nominal_velocity"] ** 2
+    e_bullet = (
+        0.5 * (used_ammo["bullet_mass"] / 1000) * recoil_full["nominal_velocity"] ** 2
+    )
     damage = int(math.sqrt(e_bullet))
     print(f"* Nominal Muzzle Velocity: {recoil_full['nominal_velocity']:.1f} m/s")
     print(f"* Actual Muzzle Velocity: {recoil_full['actual_velocity']:.1f} m/s")
@@ -243,13 +262,16 @@ def show_recoil(gun, used_ammo):
     print("\n### Recoil Physics")
     print(f" - Fully loaded free recoil: {recoil_full['free_recoil_energy']:.2f} J")
     print(f" - Last-shot free recoil: {recoil_empty['free_recoil_energy']:.2f} J")
-    print(f" - Fully loaded ejecta momentum: {recoil_full['ejecta_momentum']:.2f} kg m/s")
+    print(
+        f" - Fully loaded ejecta momentum: {recoil_full['ejecta_momentum']:.2f} kg m/s"
+    )
     print(f" - Last-shot ejecta momentum: {recoil_empty['ejecta_momentum']:.2f} kg m/s")
     print("\n### Shooter Disturbance")
     for shooter in SHOOTER:
         calculate_throwoff(shooter, gun, recoil_full, recoil_empty)
     # 5-shot stance comparison illustration (rendered by examples.py).
     import examples
+
     cassie = SHOOTER.get(examples.EXAMPLE_SHOOTER)
     if cassie is None:
         print(
@@ -282,8 +304,10 @@ if __name__ == "__main__":
         print(f"### [{guntype}](#{reference})\n")
         for weapon in WEAPONS[guntype]:
             for ammo in AMMO[guntype]:
-                title = f"{weapon['name']}: {ammo['name']} ({weapon['barrel_length']}\"" \
-                       f"barrel, {weapon['capacity']} rd. mag)"
+                title = (
+                    f'{weapon["name"]}: {ammo["name"]} ({weapon["barrel_length"]}"'
+                    f"barrel, {weapon['capacity']} rd. mag)"
+                )
                 link = substitutions.sub("", title).lower().replace(" ", "-")
                 print(f"- [{title}](#{link})\n")
 
