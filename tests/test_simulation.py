@@ -110,3 +110,95 @@ class TestSimulateStringClimb(unittest.TestCase):
             self.gun, self.ammo, self.shooter, self._scenario(2)
         )
         self.assertEqual(a, b)
+
+
+def _group_size_cm(shots):
+    biggest = 0.0
+    for i in range(len(shots)):
+        for j in range(i + 1, len(shots)):
+            dx = shots[i]["x_cm"] - shots[j]["x_cm"]
+            dy = shots[i]["y_cm"] - shots[j]["y_cm"]
+            biggest = max(biggest, (dx * dx + dy * dy) ** 0.5)
+    return biggest
+
+
+class TestFlinchAndScatter(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        recoil.load_data()
+        cls.gun = recoil.WEAPONS["9x19mm Parabellum"][2]  # Glock 17
+        cls.ammo = recoil.AMMO["9x19mm Parabellum"][0]
+
+    def _scenario(self):
+        return {
+            "range_m": 25,
+            "shot_count": 8,
+            "time_limit_s": 4,
+            "stance": "standing",
+            "seed": 7,
+        }
+
+    def test_right_handed_flinch_pushes_low_left(self):
+        shooter = dict(recoil.SHOOTER["Alice Smallframe"], handedness="right")
+        # Shot 0 has zero accumulated climb, so its offset is pure flinch bias.
+        shots = simulation.simulate_string(
+            self.gun, self.ammo, shooter, self._scenario(),
+            flinch=True, scatter=False,
+        )
+        self.assertLess(shots[0]["x_cm"], 0.0)  # left
+        self.assertLess(shots[0]["y_cm"], 0.0)  # low
+
+    def test_left_handed_flinch_mirrors_to_low_right(self):
+        right = dict(recoil.SHOOTER["Alice Smallframe"], handedness="right")
+        left = dict(recoil.SHOOTER["Alice Smallframe"], handedness="left")
+        right_shots = simulation.simulate_string(
+            self.gun, self.ammo, right, self._scenario(),
+            flinch=True, scatter=False,
+        )
+        left_shots = simulation.simulate_string(
+            self.gun, self.ammo, left, self._scenario(),
+            flinch=True, scatter=False,
+        )
+        # The lateral flinch flips sign for a left-handed shooter (shot 0).
+        self.assertGreater(left_shots[0]["x_cm"], right_shots[0]["x_cm"])
+        self.assertGreater(left_shots[0]["x_cm"], 0.0)
+
+    def test_higher_skill_shrinks_the_group(self):
+        novice = dict(recoil.SHOOTER["Alice Smallframe"], skill=1, handedness="right")
+        expert = dict(recoil.SHOOTER["Alice Smallframe"], skill=8, handedness="right")
+        novice_group = _group_size_cm(
+            simulation.simulate_string(self.gun, self.ammo, novice, self._scenario())
+        )
+        expert_group = _group_size_cm(
+            simulation.simulate_string(self.gun, self.ammo, expert, self._scenario())
+        )
+        self.assertLess(expert_group, novice_group)
+
+    def test_higher_skill_reduces_flinch_bias(self):
+        novice = dict(recoil.SHOOTER["Alice Smallframe"], skill=1, handedness="right")
+        expert = dict(recoil.SHOOTER["Alice Smallframe"], skill=8, handedness="right")
+        # Compare the pure flinch bias on shot 0 (zero climb, no scatter).
+        novice_low = -simulation.simulate_string(
+            self.gun, self.ammo, novice, self._scenario(),
+            flinch=True, scatter=False,
+        )[0]["y_cm"]
+        expert_low = -simulation.simulate_string(
+            self.gun, self.ammo, expert, self._scenario(),
+            flinch=True, scatter=False,
+        )[0]["y_cm"]
+        self.assertLess(expert_low, novice_low)
+
+    def test_higher_skill_reduces_vertical_walk(self):
+        novice = dict(recoil.SHOOTER["Alice Smallframe"], skill=1, handedness="right")
+        expert = dict(recoil.SHOOTER["Alice Smallframe"], skill=8, handedness="right")
+        novice_shots = simulation.simulate_string(
+            self.gun, self.ammo, novice, self._scenario(),
+            flinch=False, scatter=False,
+        )
+        expert_shots = simulation.simulate_string(
+            self.gun, self.ammo, expert, self._scenario(),
+            flinch=False, scatter=False,
+        )
+        novice_walk = novice_shots[-1]["y_cm"] - novice_shots[0]["y_cm"]
+        expert_walk = expert_shots[-1]["y_cm"] - expert_shots[0]["y_cm"]
+        self.assertLess(expert_walk, novice_walk)
