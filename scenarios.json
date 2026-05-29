@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Skill comparison - Alice (novice) rapid fire",
+    "target": "bullseye",
+    "range_m": 25,
+    "caliber": "9x19mm Parabellum",
+    "gun": "Glock 17",
+    "ammo": "9x19mm 115 gr Federal FMJ",
+    "shooter": "Alice Smallframe",
+    "shot_count": 5,
+    "time_limit_s": 10,
+    "stance": "standing",
+    "seed": 1
+  },
+  {
+    "name": "Skill comparison - Commando Cassie (expert) rapid fire",
+    "target": "bullseye",
+    "range_m": 25,
+    "caliber": "9x19mm Parabellum",
+    "gun": "Glock 17",
+    "ammo": "9x19mm 115 gr Federal FMJ",
+    "shooter": "Commando Cassie",
+    "shot_count": 5,
+    "time_limit_s": 10,
+    "stance": "standing",
+    "seed": 1
+  },
+  {
+    "name": "Cadence comparison - Cassie slow fire",
+    "target": "bullseye",
+    "range_m": 25,
+    "caliber": "9x19mm Parabellum",
+    "gun": "Glock 17",
+    "ammo": "9x19mm 115 gr Federal FMJ",
+    "shooter": "Commando Cassie",
+    "shot_count": 5,
+    "time_limit_s": 50,
+    "stance": "standing",
+    "seed": 2
+  },
+  {
+    "name": "Cadence comparison - Cassie rapid fire",
+    "target": "bullseye",
+    "range_m": 25,
+    "caliber": "9x19mm Parabellum",
+    "gun": "Glock 17",
+    "ammo": "9x19mm 115 gr Federal FMJ",
+    "shooter": "Commando Cassie",
+    "shot_count": 5,
+    "time_limit_s": 5,
+    "stance": "standing",
+    "seed": 2
+  },
+  {
+    "name": "Weapon comparison - Glock 17 popper speed string",
+    "target": "popper",
+    "range_m": 10,
+    "caliber": "9x19mm Parabellum",
+    "gun": "Glock 17",
+    "ammo": "9x19mm 115 gr Federal FMJ",
+    "shooter": "Commando Cassie",
+    "shot_count": 3,
+    "time_limit_s": 1.5,
+    "stance": "standing",
+    "seed": 3
+  },
+  {
+    "name": "Weapon comparison - MP5-N popper speed string",
+    "target": "popper",
+    "range_m": 10,
+    "caliber": "9x19mm Parabellum",
+    "gun": "MP5-N",
+    "ammo": "9x19mm 115 gr Federal FMJ",
+    "shooter": "Commando Cassie",
+    "shot_count": 3,
+    "time_limit_s": 1.5,
+    "stance": "standing",
+    "seed": 3
+  },
+  {
+    "name": "Practical scoring - Cassie IPSC silhouette",
+    "target": "ipsc_silhouette",
+    "range_m": 10,
+    "caliber": "9x19mm Parabellum",
+    "gun": "Glock 17",
+    "ammo": "9x19mm 115 gr Federal FMJ",
+    "shooter": "Commando Cassie",
+    "shot_count": 6,
+    "time_limit_s": 4,
+    "stance": "standing",
+    "seed": 4
+  }
+]

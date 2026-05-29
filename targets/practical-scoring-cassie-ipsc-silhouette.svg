@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+<rect x="20" y="20" width="360" height="360" fill="#d9c7a8" stroke="#7a6a4a"/>
+<ellipse class="zone" cx="200.0" cy="200.0" rx="115.7" ry="154.3" fill="none" stroke="#5a4a2a" stroke-dasharray="4 3"/>
+<ellipse class="zone" cx="200.0" cy="200.0" rx="77.1" ry="118.3" fill="none" stroke="#5a4a2a" stroke-dasharray="4 3"/>
+<ellipse class="zone" cx="200.0" cy="200.0" rx="38.6" ry="77.1" fill="none" stroke="#5a4a2a" stroke-dasharray="4 3"/>
+<circle class="shot" cx="197.2" cy="204.7" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="195.8" cy="62.8" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="199.4" cy="11.4" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="201.0" cy="-4.8" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="197.1" cy="-14.0" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<circle class="shot" cx="194.8" cy="-20.4" r="4" fill="#c0392b" stroke="#ffffff" stroke-width="0.8"/>
+<line x1="392" y1="20" x2="392" y2="380" stroke="#dddddd"/>
+<text x="400" y="38" font-family="sans-serif" font-size="12" fill="#333333">Scenario: <tspan font-weight="bold">Practical scoring - Cassie IPSC silhouette</tspan></text>
+<text x="400" y="58" font-family="sans-serif" font-size="12" fill="#333333">Gun: <tspan font-weight="bold">Glock 17</tspan></text>
+<text x="400" y="78" font-family="sans-serif" font-size="12" fill="#333333">Ammo: <tspan font-weight="bold">9x19mm 115 gr Federal FMJ</tspan></text>
+<text x="400" y="98" font-family="sans-serif" font-size="12" fill="#333333">Shooter: <tspan font-weight="bold">Commando Cassie</tspan></text>
+<text x="400" y="118" font-family="sans-serif" font-size="12" fill="#333333">Range: <tspan font-weight="bold">10 m</tspan></text>
+<text x="400" y="138" font-family="sans-serif" font-size="12" fill="#333333">Points: <tspan font-weight="bold">6</tspan></text>
+<text x="400" y="158" font-family="sans-serif" font-size="12" fill="#333333">Zones: <tspan font-weight="bold">A1 C0 D1</tspan></text>
+<text x="400" y="178" font-family="sans-serif" font-size="12" fill="#333333">Misses: <tspan font-weight="bold">4</tspan></text>
+<text x="400" y="198" font-family="sans-serif" font-size="12" fill="#333333">Hit factor: <tspan font-weight="bold">1.50</tspan></text>
+</svg>
