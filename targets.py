@@ -125,12 +125,61 @@ def _render_bullseye(target_def, shots, score, run_meta):
     return "\n".join(parts)
 
 
+def _render_popper(target_def, shots, score, run_meta):
+    scale = _scale(target_def)
+    head_cx, head_cy = _to_px(0.0, 0.0, target_def)
+    head_r = target_def["head_radius_cm"] * scale
+    half_w = target_def["body_width_cm"] / 2.0
+    body_left_px, body_top_px = _to_px(-half_w, target_def["body_top_y_cm"], target_def)
+    body_w_px = target_def["body_width_cm"] * scale
+    body_h_px = target_def["body_height_cm"] * scale
+
+    parts = [_svg_open()]
+    parts.append(
+        f'<rect x="{_MARGIN_PX}" y="{_MARGIN_PX}" width="{_FACE_PX}" '
+        f'height="{_FACE_PX}" fill="#fbfbfb" stroke="#cccccc"/>'
+    )
+    parts.append(
+        f'<rect x="{body_left_px:.1f}" y="{body_top_px:.1f}" '
+        f'width="{body_w_px:.1f}" height="{body_h_px:.1f}" '
+        f'fill="#8a847a" stroke="#333333"/>'
+    )
+    parts.append(
+        f'<circle cx="{head_cx:.1f}" cy="{head_cy:.1f}" r="{head_r:.1f}" '
+        f'fill="#b8b3a8" stroke="#333333" stroke-width="1.5"/>'
+    )
+    parts.append(_shot_markers(shots, target_def))
+    if score.get("neutralized"):
+        parts.append(
+            f'<text x="{head_cx:.1f}" y="{head_cy:.1f}" text-anchor="middle" '
+            f'font-family="sans-serif" font-size="22" font-weight="bold" '
+            f'fill="#1e8449" transform="rotate(-12 {head_cx:.1f} {head_cy:.1f})">'
+            f'NEUTRALIZED</text>'
+        )
+    stn = score.get("shots_to_neutralize")
+    tth = score.get("time_to_hit_s")
+    parts.append(_stats_panel([
+        ("Scenario", run_meta["scenario"]),
+        ("Gun", run_meta["gun"]),
+        ("Ammo", run_meta["ammo"]),
+        ("Shooter", run_meta["shooter"]),
+        ("Range", f'{run_meta["range_m"]} m'),
+        ("Result", "Neutralized" if score.get("neutralized") else "Standing"),
+        ("Shots to hit", stn if stn is not None else "-"),
+        ("Time to hit", f'{tth:.2f} s' if tth is not None else "-"),
+    ]))
+    parts.append("</svg>")
+    return "\n".join(parts)
+
+
 def render_svg(target_def, shots, score, run_meta):
     """Render an authentic SVG target with shot markers and a stats panel."""
     target_type = target_def["type"]
     if target_type == "bullseye":
-        return _render_bullseye(target_def, shots, score, run_meta)
+       return _render_bullseye(target_def, shots, score, run_meta)
+    if target_type == "popper":
+       return _render_popper(target_def, shots, score, run_meta)
     raise ValueError(
-        f"Invalid target type '{target_type}'. "
-        f"Valid types are: bullseye, ipsc_silhouette, popper"
+       f"Invalid target type '{target_type}'. "
+       f"Valid types are: bullseye, ipsc_silhouette, popper"
     )

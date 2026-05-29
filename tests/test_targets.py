@@ -43,3 +43,31 @@ class TestBullseyeSvg(unittest.TestCase):
         svg = targets.render_svg(self.target_def, self.shots, self.score, self.run_meta)
         self.assertIn("Glock 17", svg)
         self.assertIn("Cassie", svg)
+
+
+class TestPopperSvg(unittest.TestCase):
+    def setUp(self):
+        self.target_def = targets.TARGET_DEFS["popper"]
+        self.shots = [{"x_cm": 0.0, "y_cm": 0.0, "shot_index": 0, "time_s": 0.3}]
+        self.run_meta = {
+            "scenario": "Speed", "gun": "MP5-N", "ammo": "FMJ",
+            "shooter": "Cassie", "range_m": 10, "shot_count": 1, "time_limit_s": 1.5,
+        }
+
+    def test_neutralized_popper_shows_stamp(self):
+        score = {
+            "target": "popper", "neutralized": True,
+            "shots_to_neutralize": 1, "time_to_hit_s": 0.3, "group_size_cm": 0.0,
+        }
+        svg = targets.render_svg(self.target_def, self.shots, score, self.run_meta)
+        self.assertTrue(svg.lstrip().startswith("<svg"))
+        self.assertIn("NEUTRALIZED", svg)
+        self.assertEqual(svg.count('class="shot"'), 1)
+
+    def test_standing_popper_has_no_stamp(self):
+        score = {
+            "target": "popper", "neutralized": False,
+            "shots_to_neutralize": None, "time_to_hit_s": None, "group_size_cm": 0.0,
+        }
+        svg = targets.render_svg(self.target_def, self.shots, score, self.run_meta)
+        self.assertNotIn("NEUTRALIZED", svg)
